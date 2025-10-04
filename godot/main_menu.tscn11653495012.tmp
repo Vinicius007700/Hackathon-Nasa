@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://basyo0xq4cdpj"]
+
+[ext_resource type="Texture2D" uid="uid://c8pc6peyu2e1l" path="res://background.jpg" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://dbfanmqkl2voy" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://trecm7sagipa" path="res://title.png" id="2_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://bjreqy1usb0c7" path="res://8bitButton.tscn" id="2_jix8l"]
+[ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://logo.gd" id="3_fu7sn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("1_7vrkn")
+modulate_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbon")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.0
+offset_top = 96.0
+offset_right = 206.0
+offset_bottom = 325.0
+grow_horizontal = 2
+texture = ExtResource("2_fu7sn")
+script = ExtResource("3_fu7sn")
+
+[node name="eightBitButton" parent="." instance=ExtResource("2_jix8l")]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 430.0
+offset_right = 2485.0
+offset_bottom = 1187.0
+label_text = "Start"
+
+[connection signal="pressed" from="eightBitButton" to="." method="_on_eight_bit_button_pressed"]
