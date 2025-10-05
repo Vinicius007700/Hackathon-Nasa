@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from rich import print
 
 # Importa nosso cérebro de dados
-from . import load_data
+import load_data
 
 # --- INICIALIZAÇÃO E "CACHE" GLOBAL ---
 app = FastAPI()
