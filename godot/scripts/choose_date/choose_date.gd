@@ -18,5 +18,4 @@ func _on_button_2023_pressed() -> void:
 
 func send_to_backend(ano):
 	api_request.request("https://hackathon-nasa.onrender.com/api/data-filter-full/")
-	var scene_path = "res://scenes/book_cutscene.tscn" 
-	get_tree().change_scene_to_file(scene_path)
+	get_tree().change_scene_to_file("res://scenes/cutscene/intial-cutscenes/book1Scene.tscn")

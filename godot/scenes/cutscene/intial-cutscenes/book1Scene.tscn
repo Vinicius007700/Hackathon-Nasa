@@ -25,5 +25,5 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2xamn")
 [node name="Book" parent="Panel" instance=ExtResource("1_pkbjw")]
 layout_mode = 1
 anchors_preset = -1
-data_path = "res://scenes/cutscene/book1.json"
-next = "res://scenes/cutscene/book2Scene.tscn"
+data_path = "res://scenes/cutscene/intial-cutscenes/book1.json"
+next = "res://scenes/cutscene/intial-cutscenes/book2Scene.tscn"
