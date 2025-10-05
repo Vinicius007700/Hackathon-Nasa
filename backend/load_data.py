@@ -9,7 +9,14 @@ from rich import print
 
 CACHE_DIR = 'backend/cache'
 EVENT_DEFINITIONS = { # Dicionário completo EVENT_DEFINITIONS aqui...
-    "FLR": {"nome_completo": "Erupção Solar", "categoria": "Causa", "peso_impacto": 7}, "CME": {"nome_completo": "Ejeção de Massa Coronal", "categoria": "Causa", "peso_impacto": 9}, "HSS": {"nome_completo": "Fluxo de Vento de Alta Velocidade", "categoria": "Causa", "peso_impacto": 6}, "SEP": {"nome_completo": "Partículas Solares Energéticas", "categoria": "Viagem", "peso_impacto": 8}, "IPS": {"nome_completo": "Choque Interplanetário", "categoria": "Viagem", "peso_impacto": 5}, "MPC": {"nome_completo": "Cruzamento da Magnetopausa", "categoria": "Impacto", "peso_impacto": 4}, "GST": {"nome_completo": "Tempestade Geomagnética", "categoria": "Impacto", "peso_impacto": 10}, "RBE": {"nome_completo": "Aumento do Cinturão de Radiação", "categoria": "Pós-Impacto", "peso_impacto": 7}
+    "FLR": {"nome_completo": "Erupção Solar", "categoria": "Causa", "peso_impacto": 7}, 
+    "CME": {"nome_completo": "Ejeção de Massa Coronal", "categoria": "Causa", "peso_impacto": 9}, 
+    "HSS": {"nome_completo": "Fluxo de Vento de Alta Velocidade", "categoria": "Causa", "peso_impacto": 6}, 
+    "SEP": {"nome_completo": "Partículas Solares Energéticas", "categoria": "Viagem", "peso_impacto": 8}, 
+    "IPS": {"nome_completo": "Choque Interplanetário", "categoria": "Viagem", "peso_impacto": 5}, 
+    "MPC": {"nome_completo": "Cruzamento da Magnetopausa", "categoria": "Impacto", "peso_impacto": 4}, 
+    "GST": {"nome_completo": "Tempestade Geomagnética", "categoria": "Impacto", "peso_impacto": 10}, 
+    "RBE": {"nome_completo": "Aumento do Cinturão de Radiação", "categoria": "Pós-Impacto", "peso_impacto": 7}
 }
 
 def load_all_data_on_demand():
@@ -126,9 +133,9 @@ def get_event_time(event_type, chain_ids):
 def gerar_roteiro_fazendeiro(analysis, chain_ids):
     # ... (função gerar_roteiro_fazendeiro completa)
     causa_ids = [eid for eid in chain_ids if EVENT_DEFINITIONS.get(eid.split('-')[-2], {}).get('categoria') == 'Causa']
-    aviso_dt = get_event_time('CME', causa_ids) or get_event_time('FLR', causa_ids)
+    aviso_dt = get_event_time('CME', causa_ids) or get_event_time('FLR', causa_ids) or get_event_time('HSS', causa_ids)
     aviso_str = f"Notificação Push\n{aviso_dt.strftime('%d/%m %H:%M')} : Alerta de clima espacial. Causa: {analysis['causa_principal']}. Risco para GPS."
-    impacto_dt = get_event_time('MPC', chain_ids)
+    impacto_dt = get_event_time('MPC', chain_ids) or get_event_time('GST', chain_ids)
     impacto_str = (f"Em {impacto_dt.strftime('%d/%m às %H:%M')}, Alice chega. No mesmo instante, os tratores de Joseph param. 'A tempestade chegou', diz ela. 'Seu GPS não vai funcionar, mas eu ajudo a guiar a colheita.'")
     gst_dt = get_event_time('GST', chain_ids)
     futuro_dt = gst_dt + timedelta(hours=24)
