@@ -74,7 +74,7 @@ func show_result(did_win: bool):
 		message_label_win.modulate = Color.GREEN
 		ring_color = Color.GREEN
 		get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/level_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/cutscene/post-conection/book-post-conection.tscn")
 	else:
 		message_label_win.visible = false
 		message_label_lose.visible = true
