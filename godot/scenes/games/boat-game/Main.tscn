@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://blo2r51motf8y"]
+
+[ext_resource type="Script" uid="uid://bv55kdlum48vf" path="res://scenes/games/boat-game/main.gd" id="1_b3v7m"]
+[ext_resource type="PackedScene" uid="uid://bxhwjwc4ahsrq" path="res://scripts/boat-game/boat.tscn" id="2_7y0yw"]
+[ext_resource type="Texture2D" uid="uid://cqgghr7sl4u2h" path="res://images/boat-game/river.png" id="2_616lh"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="4_616lh"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_b3v7m")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2337.5, 326.00003)
+scale = Vector2(9.130858, 5.0781245)
+texture = ExtResource("2_616lh")
+
+[node name="boat" parent="." instance=ExtResource("2_7y0yw")]
+position = Vector2(115, 360)
+
+[node name="LogTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PanelTempo" type="Panel" parent="HUD"]
+anchors_preset = -1
+anchor_right = 0.046000004
+anchor_bottom = 0.062000003
+offset_left = 810.0
+offset_top = 549.0
+offset_right = 968.008
+offset_bottom = 607.824
+
+[node name="Tempo" type="Label" parent="HUD/PanelTempo"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 36.0
+offset_right = 177.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("4_616lh")
+text = "Time: 1s"
+
+[node name="PanelInicio" type="Panel" parent="HUD"]
+offset_left = 290.0
+offset_top = 263.0
+offset_right = 736.0
+offset_bottom = 394.0
+
+[node name="Mensagem_inicio" type="Label" parent="HUD/PanelInicio"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 15.0
+offset_right = 691.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("4_616lh")
+text = "Now, Raimundo is in trouble
+with using GPS. Help him 
+avoid obstacles. Press the 
+right  mouse button for 
+play."
+
+[node name="PanelFim" type="Panel" parent="HUD"]
+offset_left = 291.0
+offset_top = 269.0
+offset_right = 741.0
+offset_bottom = 396.0
+
+[node name="Mensagem_fim_win" type="Label" parent="HUD/PanelFim"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_616lh")
+text = "You are so amazing! Thank you
+very much making
+a beatiful day for Raimundo."
+
+[node name="Mensagem_fim_lose" type="Label" parent="HUD/PanelFim"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 595.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("4_616lh")
+text = "Oh no! You crashed  
+Raimundo's boat. Right-click
+to help him again."
+
+[connection signal="timeout" from="LogTimer" to="." method="_on_log_timer_timeout"]
