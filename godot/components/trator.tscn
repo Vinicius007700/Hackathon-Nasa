@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://clm6bg4tn1qxs"]
+
+[ext_resource type="Script" uid="uid://bgns186cathrg" path="res://scripts/farmer_game/trator.gd" id="1_s7nr1"]
+[ext_resource type="Texture2D" uid="uid://cc7j4e08lrjt1" path="res://images/farmer_game/tractor.png" id="2_s7nr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsr88"]
+size = Vector2(52, 91.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5of04"]
+size = Vector2(61, 101)
+
+[node name="Trator" type="CharacterBody2D" groups=["Trator"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_s7nr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.49998856, 0.24999237)
+shape = SubResource("RectangleShape2D_hsr88")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.49998856, -0.5000076)
+scale = Vector2(2.8437493, 3.0937495)
+texture = ExtResource("2_s7nr1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0.49998856, -0.5000076)
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 648
+
+[node name="AreaDoTrator" type="Area2D" parent="."]
+position = Vector2(0.49998856, -0.5000076)
+collision_layer = 0
+
+[node name="CollisionShapeArea" type="CollisionShape2D" parent="AreaDoTrator"]
+shape = SubResource("RectangleShape2D_5of04")
+
+[connection signal="body_entered" from="AreaDoTrator" to="." method="_on_area_do_trator_body_entered"]
