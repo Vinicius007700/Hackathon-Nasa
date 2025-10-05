@@ -13,7 +13,7 @@ func _on_fast_game_button_pressed() -> void:
 	GameState.game_mode = "fast"
 	_set_buttons_disabled(true)
 	# Chama o endpoint que já escolhe uma história aleatória
-	api_request.request("http://127.0.0.1:8000/api/fast-game")
+	api_request.request("https://hackathon-nasa.onrender.com/api/fast-game")
 
 # --- FLUXO DO FULL GAME ---
 func _on_full_game_button_pressed() -> void:
@@ -21,7 +21,7 @@ func _on_full_game_button_pressed() -> void:
 	GameState.game_mode = "full"
 	_set_buttons_disabled(true)
 	# Chama o endpoint que retorna TODAS as tempestades para o Godot
-	api_request.request("http://127.0.0.1:8000/api/full-game-data")
+	api_request.request("https://hackathon-nasa.onrender.com/api/full-game-data")
 
 # --- FUNÇÃO ÚNICA PARA LIDAR COM A RESPOSTA DA API ---
 func _on_api_request_completed(result, response_code, headers, body):
@@ -38,9 +38,9 @@ func _on_api_request_completed(result, response_code, headers, body):
 		# do Godot para ter certeza.
 		var scene_path = ""
 		if GameState.game_mode == "fast":
-			scene_path = "res://cenarios/Book_Fast.tscn" # Coloque o caminho certo aqui
+			scene_path = "res://scenes/book_cutscene.tscn" # Coloque o caminho certo aqui
 		else: # if GameState.game_mode == "full"
-			scene_path = "res://cenarios/Book_Full.tscn" # Coloque o caminho certo aqui
+			scene_path = "res://scenes/book_cutscene.tscn" # Coloque o caminho certo aqui
 			
 		print("Dados salvos. Transicionando para: ", scene_path)
 		get_tree().change_scene_to_file(scene_path)
