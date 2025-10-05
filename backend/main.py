@@ -8,7 +8,7 @@ from typing import Optional
 import pandas as pd
 
 # Importa as funções do nosso "cérebro"
-from . import data_manager
+import data_manager
 
 # --- INICIALIZAÇÃO E CARREGAMENTO ---
 app = FastAPI()
