@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://basyo0xq4cdpj"]
+[gd_scene load_steps=8 format=3 uid="uid://basyo0xq4cdpj"]
 
 [ext_resource type="Script" uid="uid://dbfanmqkl2voy" path="res://scripts/main_menu/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c8pc6peyu2e1l" path="res://images/main_menu/background.jpg" id="2_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://trecm7sagipa" path="res://images/main_menu/title.png" id="3_oa1go"]
 [ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://scripts/main_menu/logo.gd" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://images/main_menu/pixil-frame-0.png" id="5_jk1qb"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_rtw2f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
 texture = ExtResource("2_rtw2f")
@@ -57,21 +58,6 @@ offset_bottom = 2390.864
 scale = Vector2(0.07, 0.07)
 theme_override_constants/separation = 150
 
-[node name="FastGameButton" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_jk1qb")
-
-[node name="Label" type="Label" parent="VBoxContainer/FastGameButton"]
-layout_mode = 0
-offset_left = -0.00041770935
-offset_top = 0.00036621094
-offset_right = 2071.4282
-offset_bottom = 757.14343
-theme_override_font_sizes/font_size = 250
-text = "Fast Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="FullGameButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_jk1qb")
@@ -82,8 +68,9 @@ offset_left = -0.00041770935
 offset_top = 0.00036621094
 offset_right = 2071.4282
 offset_bottom = 757.14343
+theme_override_fonts/font = ExtResource("6_rtw2f")
 theme_override_font_sizes/font_size = 250
-text = "Full Game"
+text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -97,6 +84,7 @@ offset_left = -0.00041770935
 offset_top = 0.00036621094
 offset_right = 2071.4282
 offset_bottom = 757.14343
+theme_override_fonts/font = ExtResource("6_rtw2f")
 theme_override_font_sizes/font_size = 250
 text = "Exit"
 horizontal_alignment = 1
@@ -104,6 +92,5 @@ vertical_alignment = 1
 
 [node name="APIRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="VBoxContainer/FastGameButton" to="." method="_on_fast_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/FullGameButton" to="." method="_on_full_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
