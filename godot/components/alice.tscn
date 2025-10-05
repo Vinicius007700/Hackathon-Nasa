@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6wgs57gw77il"]
+[gd_scene load_steps=14 format=3 uid="uid://b6wgs57gw77il"]
 
 [ext_resource type="Script" uid="uid://dtacv3is6ti23" path="res://scripts/alice.gd" id="1_aae5f"]
-[ext_resource type="Texture2D" uid="uid://c3al0vkn7km8w" path="res://imagens/alice_spritesheet.png" id="2_51jd6"]
+[ext_resource type="Texture2D" uid="uid://c3al0vkn7km8w" path="res://images/alice_spritesheet.png" id="2_51jd6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsr88"]
-size = Vector2(10.799897, 17.599995)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5of04"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo2ul"]
+size = Vector2(22.999996, 38.000023)
 
 [sub_resource type="Animation" id="Animation_uapwn"]
 length = 0.001
@@ -167,20 +165,19 @@ _data = {
 &"up": SubResource("Animation_1kub6")
 }
 
-[node name="Alice" type="CharacterBody2D"]
-scale = Vector2(2.5, 2.5)
-input_pickable = true
+[node name="Alice" type="CharacterBody2D" groups=["Alice"]]
+collision_mask = 0
 script = ExtResource("1_aae5f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-203.60002, -3.6000004)
-scale = Vector2(0.7, 0.7)
+position = Vector2(-0.24998474, 0.7500057)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_51jd6")
 hframes = 3
 vframes = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-203.60002, -3.6000004)
+position = Vector2(-0.25, 0.7500054)
 scale = Vector2(0.7, 0.7)
 zoom = Vector2(2, 2)
 limit_left = 0
@@ -189,16 +186,9 @@ limit_right = 1024
 limit_bottom = 648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-203.6, -3.6000137)
+position = Vector2(-0.14996338, 0.35003662)
 scale = Vector2(0.99999976, 0.99999976)
-shape = SubResource("RectangleShape2D_hsr88")
-disabled = true
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-203.59998, -3.600012)
-shape = SubResource("RectangleShape2D_5of04")
+shape = SubResource("RectangleShape2D_jo2ul")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

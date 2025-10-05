@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3al0vkn7km8w"
-path="res://.godot/imported/alice_spritesheet.png-122afce317c415a331b1dc221c4e0c69.ctex"
+uid="uid://cc7j4e08lrjt1"
+path="res://.godot/imported/tractor.png-3e83072d9eacdd94e1da212ef2165253.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/alice_spritesheet.png"
-dest_files=["res://.godot/imported/alice_spritesheet.png-122afce317c415a331b1dc221c4e0c69.ctex"]
+source_file="res://images/farmer_game/tractor.png"
+dest_files=["res://.godot/imported/tractor.png-3e83072d9eacdd94e1da212ef2165253.ctex"]
 
 [params]
 
