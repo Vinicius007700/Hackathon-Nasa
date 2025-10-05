@@ -79,3 +79,41 @@ def get_full_event_chain_ids(start_id, master_cache):
         for linked_event in master_cache.get(current_id, {}).get('linkedEvents') or []:
             if linked_id := linked_event.get('activityID'): queue.append(linked_id)
     return sorted(list(chain))
+
+def analyze_storm_dossier(chain_ids, gst_event):
+    # Lógica de contagem e score (intacta)
+    event_types = [event_id.split('-')[-2] for event_id in chain_ids]
+    event_counts = Counter(event_types)
+    category_summary = {"Causa": [], "Viagem": [], "Impacto": [], "Pós-Impacto": []}
+    for event_type, count in sorted(event_counts.items()):
+        definition = EVENT_DEFINITIONS.get(event_type)
+        if definition:
+            summary_str = f"{count}x {event_type} ({definition['nome_completo']})"
+            category_summary[definition["categoria"]].append(summary_str)
+    cause_scores = {etype: count * EVENT_DEFINITIONS[etype]['peso_impacto']
+                    for etype, count in event_counts.items()
+                    if EVENT_DEFINITIONS.get(etype, {}).get("categoria") == "Causa"}
+    main_cause_str = "Causa indeterminada."
+    if cause_scores:
+        top_cause_type = max(cause_scores, key=cause_scores.get)
+        main_cause_str = f"{event_counts[top_cause_type]}x {top_cause_type} ({EVENT_DEFINITIONS[top_cause_type]['nome_completo']})"
+    
+    # Extração do Kp (intacta)
+    max_kp = max(item.get('kpIndex', 0) for item in gst_event.get('allKpIndex', [])) if gst_event.get('allKpIndex') else 0
+    
+    # Lógica de strings de consequência (intacta)
+    if event_counts.get("MPC") and event_counts.get("GST"):
+        earth_consequence_str = f"O escudo magnético foi atingido (MPC), iniciando a Tempestade Geomagnética (GST) com pico de Kp {max_kp:.2f}."
+    elif event_counts.get("GST"):
+        earth_consequence_str = f"Ocorreu uma Tempestade Geomagnética (GST) com pico de Kp {max_kp:.2f}."
+    else: earth_consequence_str = "Impacto geomagnético mínimo ou não registrado."
+    post_impact_outlook_str = "Efeitos de longo prazo mínimos."
+    if event_counts.get("RBE"):
+        post_impact_outlook_str = "Aumento no cinturão de radiação (RBE), um risco duradouro para satélites."
+        
+    # <<< ADIÇÃO >>> Retornar também o max_kp para ser usado na história.
+    return {
+        "resumo_por_categoria": category_summary, "causa_principal": main_cause_str,
+        "consequencia_terra": earth_consequence_str, "futuro_pos_impacto": post_impact_outlook_str,
+        "max_kp": max_kp
+    }
