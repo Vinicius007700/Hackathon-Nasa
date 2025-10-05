@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://kiegrw5rm74s"]
+
+[ext_resource type="PackedScene" uid="uid://b28v0t4x4uqfc" path="res://components/Book/book.tscn" id="1_pkbjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xamn"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Book1Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xamn")
+
+[node name="Book" parent="Panel" instance=ExtResource("1_pkbjw")]
+layout_mode = 1
+anchors_preset = -1
+data_path = "res://scenes/cutscene/book1.json"
+next = "res://scenes/cutscene/book2Scene.tscn"
