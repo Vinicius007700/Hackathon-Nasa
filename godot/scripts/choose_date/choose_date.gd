@@ -15,16 +15,16 @@ func _ready():
 func _on_button_2025_pressed() -> void:
 	# Dica: use a variável para montar a URL dinamicamente!
 	var ano = 2025
-	api_request.request("https://hackathon-nasa.onrender.com/api/select-storm/%s" % ano)
+	api_request.request("https://hackathon-nasa.onrender.com/api/generate-story/%s" % ano)
 
 func _on_button_2024_pressed() -> void:
 	var ano = 2024
 	# Você estava chamando a API com '2025' em todos os botões, corrigi isso.
-	api_request.request("https://hackathon-nasa.onrender.com/api/select-storm/%s" % ano)
+	api_request.request("https://hackathon-nasa.onrender.com/api/generate-story/%s" % ano)
 
 func _on_button_2023_pressed() -> void:
 	var ano = 2023
-	api_request.request("https://hackathon-nasa.onrender.com/api/select-storm/%s" % ano)
+	api_request.request("https://hackathon-nasa.onrender.com/api/generate-story/%s" % ano)
 
 # --- Função de Callback ---
 # Esta função SÓ vai rodar QUANDO a API responder.
