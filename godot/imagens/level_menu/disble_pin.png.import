@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1sosvl73g3gv"
-path="res://.godot/imported/disble_pin.png-58b4499fbb340ce9eb8952a18df1e109.ctex"
+path="res://.godot/imported/disble_pin.png-0209335076c9ab0396e550d986426bd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/level_menu/disble_pin.png"
-dest_files=["res://.godot/imported/disble_pin.png-58b4499fbb340ce9eb8952a18df1e109.ctex"]
+source_file="res://imagens/level_menu/disble_pin.png"
+dest_files=["res://.godot/imported/disble_pin.png-0209335076c9ab0396e550d986426bd6.ctex"]
 
 [params]
 
