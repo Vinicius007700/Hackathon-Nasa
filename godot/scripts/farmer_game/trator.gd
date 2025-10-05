@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 80.0
+var speed = 80.0
 var controlavel = false
 var last_direction = "up"
 
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 			rotation_degrees = 90 # Adicionado: Aponta para a direita
 
 		if direction != Vector2.ZERO:
-			velocity = direction * SPEED
+			velocity = direction * speed
 		else:
 			velocity = Vector2.ZERO
 			
