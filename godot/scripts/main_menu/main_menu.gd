@@ -9,7 +9,7 @@ func _ready():
 func _on_full_game_button_pressed() -> void:
 	print("Botão 'Full Game' pressionado. Carregando base de dados completa...")
 	_set_buttons_disabled(true)
-	api_request.request("https://hackathon-nasa.onrender.com/api/full-game-data")
+	api_request.request("https://hackathon-nasa.onrender.com/api/load-game-data")
 
 func _on_api_request_completed(result, response_code, headers, body):
 	print("API Respondeu! Preparando para ir para a cena do Livro...")

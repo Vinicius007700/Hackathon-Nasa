@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://11cx10qx5byk"]
+[gd_scene load_steps=5 format=3 uid="uid://1rouyhkngtnf"]
 
 [ext_resource type="Script" uid="uid://bofsy5yftdkb4" path="res://scripts/choose_date/choose_date.gd" id="1_5hqja"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="1_8hxev"]

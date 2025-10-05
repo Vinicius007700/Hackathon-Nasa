@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://beg45fkk07es2"]
+
+[ext_resource type="PackedScene" uid="uid://wwwlfihaa1p4" path="res://components/BookFull/bookFull.tscn" id="1_rbtk2"]
+
+[node name="FarmerCutscene2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Book" parent="." instance=ExtResource("1_rbtk2")]
+layout_mode = 1
+data_path = "res://scenes/cutscene/farmer-cutscene/farmer2.json"
+next = "res://scenes/games/farmer_game/farmer_game.tscn"
