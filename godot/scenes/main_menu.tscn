@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://basyo0xq4cdpj"]
+[gd_scene load_steps=9 format=3 uid="uid://basyo0xq4cdpj"]
 
 [ext_resource type="Script" uid="uid://dbfanmqkl2voy" path="res://scripts/main_menu/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c8pc6peyu2e1l" path="res://images/main_menu/background.jpg" id="2_rtw2f"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://scripts/main_menu/logo.gd" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://images/main_menu/pixil-frame-0.png" id="5_jk1qb"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://bdccdq83nhmj8" path="res://musics/space_music.ogg" id="7_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
 texture = ExtResource("2_rtw2f")
@@ -91,6 +92,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="APIRequest" type="HTTPRequest" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_oa1go")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/FullGameButton" to="." method="_on_full_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

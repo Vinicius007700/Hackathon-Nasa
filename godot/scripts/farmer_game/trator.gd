@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var trator = $TratorSound
+
 var speed = 80.0
 var controlavel = false
 var last_direction = "up"
@@ -32,3 +34,4 @@ func _on_area_do_trator_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Alice"):
 		body.desativar()
 		controlavel = true
+		trator.play()
