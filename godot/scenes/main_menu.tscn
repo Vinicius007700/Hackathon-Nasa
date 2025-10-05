@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dp22pjtpdmch0" path="res://images/main_menu/new_background.png" id="2_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://byi3o0cmgwkf4" path="res://images/main_menu/new_title.png" id="3_rtw2f"]
 [ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://scripts/main_menu/logo.gd" id="4_tbmy8"]
-[ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://images/main_menu/pixil-frame-0.png" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://dds1mr6hopd2r" path="res://images/main_menu/new_frame.png" id="5_rtw2f"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_rtw2f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
@@ -60,7 +60,7 @@ theme_override_constants/separation = 150
 
 [node name="FullGameButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_jk1qb")
+texture_normal = ExtResource("5_rtw2f")
 
 [node name="Label" type="Label" parent="VBoxContainer/FullGameButton"]
 layout_mode = 0
@@ -76,7 +76,7 @@ vertical_alignment = 1
 
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_jk1qb")
+texture_normal = ExtResource("5_rtw2f")
 
 [node name="Label" type="Label" parent="VBoxContainer/ExitButton"]
 layout_mode = 0
