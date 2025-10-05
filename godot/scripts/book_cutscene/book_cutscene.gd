@@ -30,7 +30,7 @@ func _on_animation_finished(anim_name: String):
 	if changing == true:
 		current_page += 1
 		if current_page >= pages.size():
-			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+			get_tree().change_scene_to_file("res://scenes/games/intro-game/ConexaoSolar.tscn")
 			return
 		page_display.texture = pages[current_page]
 		anim_player.play_backwards("fade_page")
