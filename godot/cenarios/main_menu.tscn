@@ -102,6 +102,8 @@ text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="APIRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/FastGameButton" to="." method="_on_fast_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/FullGameButton" to="." method="_on_full_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
