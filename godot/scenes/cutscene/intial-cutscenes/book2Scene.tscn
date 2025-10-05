@@ -24,4 +24,5 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5sp0y")
 
 [node name="Book" parent="Panel" instance=ExtResource("1_5sp0y")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/book2.json"
+data_path = "res://scenes/cutscene/intial-cutscenes/book2.json"
+next = "res://scenes/games/intro-game/ConexaoSolar.tscn"
