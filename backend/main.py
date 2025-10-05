@@ -38,7 +38,7 @@ def load_game_data():
     print("\n[bold cyan]Endpoint /api/load-game-data ATIVADO.[/bold cyan]")
     
     # Chama a função de inicialização do load_data
-    master_db_loaded, all_storms_loaded = load_data.initialize_data()
+    master_db_loaded, all_storms_loaded = load_data.load_all_data_on_demand()
     
     if master_db_loaded is None or all_storms_loaded is None:
         return {"status": "error", "message": "Falha ao carregar os dados."}
