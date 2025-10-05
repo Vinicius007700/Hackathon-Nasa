@@ -61,7 +61,12 @@ theme_override_constants/separation = 150
 
 [node name="FullGameButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+<<<<<<< Updated upstream
 texture_normal = ExtResource("5_jk1qb")
+=======
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_rtw2f")
+>>>>>>> Stashed changes
 
 [node name="Label" type="Label" parent="VBoxContainer/FullGameButton"]
 layout_mode = 0
@@ -77,7 +82,12 @@ vertical_alignment = 1
 
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+<<<<<<< Updated upstream
 texture_normal = ExtResource("5_jk1qb")
+=======
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_rtw2f")
+>>>>>>> Stashed changes
 
 [node name="Label" type="Label" parent="VBoxContainer/ExitButton"]
 layout_mode = 0
@@ -85,6 +95,7 @@ offset_left = -0.00041770935
 offset_top = 0.00036621094
 offset_right = 2071.4282
 offset_bottom = 757.14343
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("6_rtw2f")
 theme_override_font_sizes/font_size = 250
 text = "Exit"

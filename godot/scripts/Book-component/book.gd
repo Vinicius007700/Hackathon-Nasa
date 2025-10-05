@@ -7,6 +7,7 @@ extends Control
 @onready var text_page = $Panel2/Text
 @onready var next_button = $NextButton
 @onready var anim_player = $AnimationPlayer
+@onready var som_livro = $SomLivro
 
 var current_page := 0
 var pages := []
@@ -25,11 +26,13 @@ func load_data():
 
 func update_page():
 	play_fade_out()
+	som_livro.play()
 	text_page.text = pages[current_page]
 
 func _on_next_button_pressed() -> void:
 	current_page += 1
 	play_fade_in()
+	print("pagesound")
 	if current_page < pages.size():
 		update_page()
 	else:

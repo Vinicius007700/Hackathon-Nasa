@@ -1,8 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://b28v0t4x4uqfc"]
+[gd_scene load_steps=12 format=3 uid="uid://b28v0t4x4uqfc"]
 
 [ext_resource type="Script" uid="uid://t5jbimre8hox" path="res://scripts/Book-component/book.gd" id="1_em4jt"]
 [ext_resource type="Texture2D" uid="uid://crwivkdutveq0" path="res://images/book/cena_1.png" id="2_w1pjc"]
+<<<<<<< Updated upstream
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_ph5nd"]
+=======
+<<<<<<< Updated upstream
+[ext_resource type="FontFile" uid="uid://bvq8edsvgdcoe" path="res://fonts/Handwriting-Regular.otf" id="3_ph5nd"]
+=======
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_ph5nd"]
+[ext_resource type="AudioStream" uid="uid://38tdk0cec8us" path="res://musics/bookflip.ogg" id="4_4chiv"]
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udo5r"]
 bg_color = Color(0, 0, 0, 0)
@@ -132,5 +141,8 @@ text = "Next Button"
 libraries = {
 &"": SubResource("AnimationLibrary_4chiv")
 }
+
+[node name="SomLivro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4chiv")
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

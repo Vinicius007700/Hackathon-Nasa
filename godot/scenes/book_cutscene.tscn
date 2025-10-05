@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://rhpjmdsjfxvq"]
+[gd_scene load_steps=11 format=3 uid="uid://c6xw671hyscwm"]
 
 [ext_resource type="Script" uid="uid://ds76pc7y3dyf7" path="res://scripts/book_cutscene/book_cutscene.gd" id="1_o5g86"]
 [ext_resource type="Texture2D" uid="uid://d2v2jixf3nlen" path="res://images/book/book.png" id="2_tvnty"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_4m53v"]
 [ext_resource type="Texture2D" uid="uid://crwivkdutveq0" path="res://images/book/cena_1.png" id="4_x6xgr"]
+[ext_resource type="AudioStream" uid="uid://38tdk0cec8us" path="res://musics/bookflip.ogg" id="5_tvnty"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8v54g"]
 
@@ -154,3 +155,6 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_4m53v")
 text = "Next Page"
+
+[node name="SomLivro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tvnty")
