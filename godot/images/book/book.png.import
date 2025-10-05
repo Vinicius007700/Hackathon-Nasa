@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://trecm7sagipa"
-path="res://.godot/imported/title.png-8696bf3481f16973e8d7a5304bb2358e.ctex"
+uid="uid://d2v2jixf3nlen"
+path="res://.godot/imported/book.png-d9ab61ce41b4bd32d2c2851aebdf6499.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/main_menu/title.png"
-dest_files=["res://.godot/imported/title.png-8696bf3481f16973e8d7a5304bb2358e.ctex"]
+source_file="res://images/book/book.png"
+dest_files=["res://.godot/imported/book.png-d9ab61ce41b4bd32d2c2851aebdf6499.ctex"]
 
 [params]
 
