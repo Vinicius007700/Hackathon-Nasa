@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b28v0t4x4uqfc"]
 
 [ext_resource type="Script" uid="uid://t5jbimre8hox" path="res://scripts/Book-component/book.gd" id="1_em4jt"]
-[ext_resource type="Texture2D" uid="uid://crwivkdutveq0" path="res://images/book/cena_1.png" id="2_w1pjc"]
+[ext_resource type="Texture2D" uid="uid://bu6t78s3ap1c0" path="res://images/book/cena_8.png" id="2_4chiv"]
 [ext_resource type="FontFile" uid="uid://bvq8edsvgdcoe" path="res://fonts/Handwriting-Regular.otf" id="3_ph5nd"]
 [ext_resource type="AudioStream" uid="uid://dg0lwioayalea" path="res://musics/BookFlip11.wav" id="4_4chiv"]
 
@@ -89,7 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_w1pjc")
+texture = ExtResource("2_4chiv")
 expand_mode = 4
 stretch_mode = 5
 
