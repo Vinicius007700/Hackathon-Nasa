@@ -1,8 +1,10 @@
-[gd_scene load_steps=81 format=3 uid="uid://d3sn0dxs6h578"]
+[gd_scene load_steps=83 format=3 uid="uid://d3sn0dxs6h578"]
 
 [ext_resource type="Script" uid="uid://ba1brqnyfqhry" path="res://scripts/level_menu/level_menu.gd" id="1_2gqye"]
 [ext_resource type="Texture2D" uid="uid://dcpundjbm6rlm" path="res://images/level_menu/mundi.png" id="1_poif0"]
 [ext_resource type="Texture2D" uid="uid://be2kjg81hnd" path="res://images/level_menu/pixil-frame-0 (1).png" id="2_mwq4c"]
+[ext_resource type="Texture2D" uid="uid://bb6ikj0bdupbp" path="res://images/level_menu/hover_pin.png" id="4_35reb"]
+[ext_resource type="Texture2D" uid="uid://1sosvl73g3gv" path="res://images/level_menu/disble_pin.png" id="4_frxpb"]
 [ext_resource type="Texture2D" uid="uid://rc3v1iw7c0sc" path="res://images/level_menu/panel.png" id="4_o1nls"]
 [ext_resource type="Script" uid="uid://bgc35cps12kty" path="res://scripts/level_menu/brazil_resume.gd" id="5_jsrvk"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_mkvq6"]
@@ -522,6 +524,7 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_2gqye")
 texture_normal = ExtResource("2_mwq4c")
+texture_hover = ExtResource("4_35reb")
 stretch_mode = 5
 
 [node name="Iceland" type="TextureButton" parent="."]
@@ -540,6 +543,8 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_2gqye")
 texture_normal = ExtResource("2_mwq4c")
+texture_hover = ExtResource("4_35reb")
+texture_disabled = ExtResource("4_frxpb")
 stretch_mode = 5
 
 [node name="USA" type="TextureButton" parent="."]
@@ -558,6 +563,7 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_2gqye")
 texture_normal = ExtResource("2_mwq4c")
+texture_hover = ExtResource("4_35reb")
 stretch_mode = 5
 
 [node name="BrazilResume" type="Panel" parent="."]
