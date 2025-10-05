@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bodllwht27sdj"]
+
+[ext_resource type="AudioStream" uid="uid://bdccdq83nhmj8" path="res://musics/space_music.ogg" id="1_7c7e0"]
+
+[node name="SpaceMusicPersist" type="Node"]
+
+[node name="SpaceMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_7c7e0")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

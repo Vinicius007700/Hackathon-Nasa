@@ -1,11 +1,13 @@
 extends CharacterBody2D
-
+signal hit
 const SPEED_Y := 300   # velocidade vertical
 const SPEED_X := 500   # velocidade horizontal constante
 const START_POS := Vector2(100, 400)
 const MIN_Y := 50
 const MAX_Y := 600
 var flying: bool = false
+
+
 func _ready():
 	reset()
 

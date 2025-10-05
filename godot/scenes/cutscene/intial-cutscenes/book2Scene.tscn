@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpr0ni21blly6"]
+
+[ext_resource type="PackedScene" uid="uid://b28v0t4x4uqfc" path="res://components/Book/book.tscn" id="1_5sp0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sp0y"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Book2Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5sp0y")
+
+[node name="Book" parent="Panel" instance=ExtResource("1_5sp0y")]
+layout_mode = 1
+data_path = "res://scenes/cutscene/intial-cutscenes/book2.json"
+next = "res://scenes/games/intro-game/ConexaoSolar.tscn"
