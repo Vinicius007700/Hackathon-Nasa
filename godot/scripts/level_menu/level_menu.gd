@@ -1,12 +1,14 @@
 extends Control
 
 @onready var icelandButton = $Iceland
+@onready var map_open = $MapOpen
 
 var brazil_visited = false
 var usa_visited = false
 var iceland_disabled = true
 
 func _ready():
+	map_open.play()
 	update_iceland()
 	
 func update_iceland():

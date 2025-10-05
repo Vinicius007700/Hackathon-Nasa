@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://d3sn0dxs6h578"]
+[gd_scene load_steps=85 format=3 uid="uid://d3sn0dxs6h578"]
 
 [ext_resource type="Script" uid="uid://ba1brqnyfqhry" path="res://scripts/level_menu/level_menu.gd" id="1_2gqye"]
 [ext_resource type="Texture2D" uid="uid://dcpundjbm6rlm" path="res://images/level_menu/mundi.png" id="1_poif0"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://xsp6bqliplws" path="res://scripts/level_menu/select_text.gd" id="9_ugxk8"]
 [ext_resource type="Script" uid="uid://bhn5p0x4u2rv" path="res://scripts/level_menu/control.gd" id="9_wxgv2"]
 [ext_resource type="Texture2D" uid="uid://da3gttsiaqnsd" path="res://images/farmer_spritesheet.png" id="10_frxpb"]
+[ext_resource type="AudioStream" uid="uid://cdk58x50xpc4h" path="res://musics/map_song.ogg" id="14_yedrf"]
+[ext_resource type="AudioStream" uid="uid://bbqmtqyyh8w32" path="res://musics/map_use.ogg" id="15_tkofx"]
 
 [sub_resource type="Theme" id="Theme_2gqye"]
 
@@ -715,6 +717,15 @@ theme_override_font_sizes/font_size = 22
 text = "Select a place to visit!"
 horizontal_alignment = 1
 script = ExtResource("9_ugxk8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_yedrf")
+volume_db = -10.0
+autoplay = true
+
+[node name="MapOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_tkofx")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="Brazil" to="BrazilResume" method="_on_brazil_mouse_entered"]
 [connection signal="mouse_exited" from="Brazil" to="BrazilResume" method="_on_brazil_mouse_exited"]

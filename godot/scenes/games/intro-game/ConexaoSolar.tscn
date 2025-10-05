@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmuitaox1ilxp"]
+[gd_scene load_steps=9 format=3 uid="uid://bmuitaox1ilxp"]
 
 [ext_resource type="Texture2D" uid="uid://ctynnq4irvnk0" path="res://new_space.png" id="1_aehqy"]
 [ext_resource type="Texture2D" uid="uid://bgx16i5or4o2e" path="res://images/new_sun.png" id="2_761cf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmq1e425nc7pc" path="res://components/intro_game/AnelPulso.tscn" id="4_f2m70"]
 [ext_resource type="Script" uid="uid://e3aiys5weu1r" path="res://scripts/intro_game/panel.gd" id="5_2wfp0"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_dux2t"]
+[ext_resource type="AudioStream" uid="uid://d12j1jcafq3mb" path="res://musics/space_song.ogg" id="7_761cf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dux2t"]
 texture = ExtResource("4_2wfp0")
@@ -31,7 +32,7 @@ texture = ExtResource("2_761cf")
 position = Vector2(549, 298)
 scale = Vector2(3, 3)
 result_panel_path = NodePath("../PainelResultado")
-initial_radius = 62.50038
+initial_radius = 98.39302
 win_margin = 10.0
 
 [node name="PainelResultado" type="Panel" parent="."]
@@ -71,3 +72,8 @@ offset_left = -2.1378784
 offset_top = -29.0401
 offset_right = 37.86209
 offset_bottom = -6.0401
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_761cf")
+volume_db = -10.0
+autoplay = true
