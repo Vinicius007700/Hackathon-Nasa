@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://basyo0xq4cdpj"]
 
 [ext_resource type="Script" uid="uid://dbfanmqkl2voy" path="res://scripts/main_menu/main_menu.gd" id="1_8ln24"]
-[ext_resource type="Texture2D" uid="uid://c8pc6peyu2e1l" path="res://images/main_menu/background.jpg" id="2_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://trecm7sagipa" path="res://images/main_menu/title.png" id="3_oa1go"]
+[ext_resource type="Texture2D" uid="uid://dp22pjtpdmch0" path="res://images/main_menu/new_background.png" id="2_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://byi3o0cmgwkf4" path="res://images/main_menu/new_title.png" id="3_rtw2f"]
 [ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://scripts/main_menu/logo.gd" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://images/main_menu/pixil-frame-0.png" id="5_jk1qb"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_rtw2f"]
@@ -10,7 +10,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
 texture = ExtResource("2_rtw2f")
-modulate_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+modulate_color = Color(0.84, 0.84, 0.84, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -37,12 +37,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -206.0
-offset_top = 96.0
-offset_right = 206.0
-offset_bottom = 325.0
+offset_left = -554.0
+offset_top = 35.0
+offset_right = 18.0
+offset_bottom = 384.0
 grow_horizontal = 2
-texture = ExtResource("3_oa1go")
+texture = ExtResource("3_rtw2f")
 script = ExtResource("4_tbmy8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -52,10 +52,10 @@ anchor_left = 0.453
 anchor_top = 0.554
 anchor_right = 0.57900006
 anchor_bottom = 0.832
-offset_left = 0.14398193
-offset_top = 0.007965088
-offset_right = 1930.992
-offset_bottom = 2390.864
+offset_left = -312.85602
+offset_top = 39.007996
+offset_right = 1617.992
+offset_bottom = 2429.864
 scale = Vector2(0.07, 0.07)
 theme_override_constants/separation = 150
 
