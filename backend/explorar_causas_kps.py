@@ -5,7 +5,7 @@ import os
 from collections import deque
 
 # --- CONFIGURAÇÃO ---
-CACHE_DIR = 'cache/'
+CACHE_DIR = 'backend/cache/'
 # Lista dos arquivos de cache que vamos carregar para a investigação
 # O nome do arquivo deve corresponder à sigla do evento (ex: nasa_gst.json -> GST)
 EVENT_FILES = [

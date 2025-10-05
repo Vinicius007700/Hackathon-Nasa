@@ -4,7 +4,7 @@ import json
 from collections import Counter
 
 # O nome do arquivo JSON que você salvou com os dados do GST
-GST_CACHE_FILE = 'cache/nasa_gst.json'
+GST_CACHE_FILE = 'backend/cache/nasa_gst.json'
 
 def analyze_top_storm_causes_corrected(filename, top_n=100):
     """
