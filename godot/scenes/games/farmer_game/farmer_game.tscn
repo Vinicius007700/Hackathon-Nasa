@@ -1,0 +1,478 @@
+[gd_scene load_steps=12 format=4 uid="uid://bhh3ufs6e0ifq"]
+
+[ext_resource type="Script" uid="uid://cccxafohjjsfn" path="res://scripts/farmer_game/farmer_game.gd" id="1_mwcxe"]
+[ext_resource type="AudioStream" uid="uid://cvi3wfqotll85" path="res://musics/farm_music.ogg" id="2_1hwgx"]
+[ext_resource type="Texture2D" uid="uid://dhi6rfpbdvamd" path="res://images/farmer_game/field.png" id="2_m8ymd"]
+[ext_resource type="PackedScene" uid="uid://bypdh4mkusc34" path="res://components/farmer_game/wheat.tscn" id="3_1hwgx"]
+[ext_resource type="AudioStream" uid="uid://bya1exhne1q6a" path="res://musics/trator.ogg" id="3_e4oev"]
+[ext_resource type="PackedScene" uid="uid://b6wgs57gw77il" path="res://components/farmer_game/alice.tscn" id="4_e4oev"]
+[ext_resource type="PackedScene" uid="uid://clm6bg4tn1qxs" path="res://components/farmer_game/trator.tscn" id="5_yf7py"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_m8ymd"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bye7h"]
+scenes/1/scene = ExtResource("3_1hwgx")
+
+[sub_resource type="TileSet" id="TileSet_jo2ul"]
+tile_size = Vector2i(40, 40)
+sources/0 = SubResource("TileSetScenesCollectionSource_bye7h")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8ymd"]
+bg_color = Color(0, 0, 0, 0.4862745)
+
+[node name="FarmerGame" type="Node2D"]
+script = ExtResource("1_mwcxe")
+
+[node name="FarmMusic" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(500, 340)
+stream = ExtResource("2_1hwgx")
+volume_db = -8.433
+autoplay = true
+parameters/looping = true
+
+[node name="Cenario 1" type="TextureRect" parent="."]
+offset_right = 512.0
+offset_bottom = 647.0
+texture = ExtResource("2_m8ymd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cenario 2" type="TextureRect" parent="."]
+offset_left = 512.0
+offset_right = 1024.0
+offset_bottom = 647.0
+texture = ExtResource("2_m8ymd")
+metadata/_edit_use_anchors_ = true
+
+[node name="TyleMapWheat" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAACAA8AAAAAAAAAAQACAAUAAAAAAAAAAQACAAYAAAAAAAAAAQACAAcAAAAAAAAAAQACAAgAAAAAAAAAAQACAAkAAAAAAAAAAQACAAoAAAAAAAAAAQACAAsAAAAAAAAAAQACAAwAAAAAAAAAAQACAA0AAAAAAAAAAQACAA4AAAAAAAAAAQADAAUAAAAAAAAAAQADAAYAAAAAAAAAAQADAAcAAAAAAAAAAQADAAgAAAAAAAAAAQADAAkAAAAAAAAAAQADAAoAAAAAAAAAAQADAAsAAAAAAAAAAQADAAwAAAAAAAAAAQADAA0AAAAAAAAAAQADAA4AAAAAAAAAAQAEAAUAAAAAAAAAAQAEAAYAAAAAAAAAAQAEAAcAAAAAAAAAAQAEAAgAAAAAAAAAAQAEAAkAAAAAAAAAAQAEAAoAAAAAAAAAAQAEAAsAAAAAAAAAAQAEAAwAAAAAAAAAAQAEAA0AAAAAAAAAAQAEAA4AAAAAAAAAAQAFAAUAAAAAAAAAAQAFAAYAAAAAAAAAAQAFAAcAAAAAAAAAAQAFAAgAAAAAAAAAAQAFAAkAAAAAAAAAAQAFAAoAAAAAAAAAAQAFAAsAAAAAAAAAAQAFAAwAAAAAAAAAAQAFAA0AAAAAAAAAAQAFAA4AAAAAAAAAAQAGAAUAAAAAAAAAAQAGAAYAAAAAAAAAAQAGAAcAAAAAAAAAAQAGAAgAAAAAAAAAAQAGAAkAAAAAAAAAAQAGAAoAAAAAAAAAAQAGAAsAAAAAAAAAAQAGAAwAAAAAAAAAAQAGAA0AAAAAAAAAAQAGAA4AAAAAAAAAAQAHAAUAAAAAAAAAAQAHAAYAAAAAAAAAAQAHAAcAAAAAAAAAAQAHAAgAAAAAAAAAAQAHAAkAAAAAAAAAAQAHAAoAAAAAAAAAAQAHAAsAAAAAAAAAAQAHAAwAAAAAAAAAAQAHAA0AAAAAAAAAAQAHAA4AAAAAAAAAAQAIAAUAAAAAAAAAAQAIAAYAAAAAAAAAAQAIAAcAAAAAAAAAAQAIAAgAAAAAAAAAAQAIAAkAAAAAAAAAAQAIAAoAAAAAAAAAAQAIAAsAAAAAAAAAAQAIAAwAAAAAAAAAAQAIAA0AAAAAAAAAAQAIAA4AAAAAAAAAAQAJAAUAAAAAAAAAAQAJAAYAAAAAAAAAAQAJAAcAAAAAAAAAAQAJAAgAAAAAAAAAAQAJAAkAAAAAAAAAAQAJAAoAAAAAAAAAAQAJAAsAAAAAAAAAAQAJAAwAAAAAAAAAAQAJAA0AAAAAAAAAAQAJAA4AAAAAAAAAAQAKAAUAAAAAAAAAAQAKAAYAAAAAAAAAAQAKAAcAAAAAAAAAAQAKAAgAAAAAAAAAAQAKAAkAAAAAAAAAAQAKAAoAAAAAAAAAAQAKAAsAAAAAAAAAAQAKAAwAAAAAAAAAAQAKAA0AAAAAAAAAAQAKAA4AAAAAAAAAAQADAA8AAAAAAAAAAQAEAA8AAAAAAAAAAQAFAA8AAAAAAAAAAQAGAA8AAAAAAAAAAQAHAA8AAAAAAAAAAQAIAA8AAAAAAAAAAQAJAA8AAAAAAAAAAQAKAA8AAAAAAAAAAQACAAAAAAAAAAAAAQACAAEAAAAAAAAAAQACAAIAAAAAAAAAAQACAAMAAAAAAAAAAQACAAQAAAAAAAAAAQADAAAAAAAAAAAAAQADAAEAAAAAAAAAAQADAAIAAAAAAAAAAQADAAMAAAAAAAAAAQADAAQAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAAEAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAMAAAAAAAAAAQAEAAQAAAAAAAAAAQAFAAAAAAAAAAAAAQAFAAEAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAMAAAAAAAAAAQAFAAQAAAAAAAAAAQAGAAAAAAAAAAAAAQAGAAEAAAAAAAAAAQAGAAIAAAAAAAAAAQAGAAMAAAAAAAAAAQAGAAQAAAAAAAAAAQAHAAAAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAHAAMAAAAAAAAAAQAHAAQAAAAAAAAAAQAIAAAAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAIAAAAAAAAAAQAIAAMAAAAAAAAAAQAIAAQAAAAAAAAAAQAJAAAAAAAAAAAAAQAJAAEAAAAAAAAAAQAJAAIAAAAAAAAAAQAJAAMAAAAAAAAAAQAJAAQAAAAAAAAAAQAKAAAAAAAAAAAAAQAKAAEAAAAAAAAAAQAKAAIAAAAAAAAAAQAKAAMAAAAAAAAAAQAKAAQAAAAAAAAAAQAPAAAAAAAAAAAAAQAPAAEAAAAAAAAAAQAPAAIAAAAAAAAAAQAPAAMAAAAAAAAAAQAPAAQAAAAAAAAAAQAPAAUAAAAAAAAAAQAPAAYAAAAAAAAAAQAPAAcAAAAAAAAAAQAPAAgAAAAAAAAAAQAPAAkAAAAAAAAAAQAPAAoAAAAAAAAAAQAPAAsAAAAAAAAAAQAPAAwAAAAAAAAAAQAQAAAAAAAAAAAAAQAQAAEAAAAAAAAAAQAQAAIAAAAAAAAAAQAQAAMAAAAAAAAAAQAQAAQAAAAAAAAAAQAQAAUAAAAAAAAAAQAQAAYAAAAAAAAAAQAQAAcAAAAAAAAAAQAQAAgAAAAAAAAAAQAQAAkAAAAAAAAAAQAQAAoAAAAAAAAAAQAQAAsAAAAAAAAAAQAQAAwAAAAAAAAAAQARAAAAAAAAAAAAAQARAAEAAAAAAAAAAQARAAIAAAAAAAAAAQARAAMAAAAAAAAAAQARAAQAAAAAAAAAAQARAAUAAAAAAAAAAQARAAYAAAAAAAAAAQARAAcAAAAAAAAAAQARAAgAAAAAAAAAAQARAAkAAAAAAAAAAQARAAoAAAAAAAAAAQARAAsAAAAAAAAAAQARAAwAAAAAAAAAAQASAAAAAAAAAAAAAQASAAEAAAAAAAAAAQASAAIAAAAAAAAAAQASAAMAAAAAAAAAAQASAAQAAAAAAAAAAQASAAUAAAAAAAAAAQASAAYAAAAAAAAAAQASAAcAAAAAAAAAAQASAAgAAAAAAAAAAQASAAkAAAAAAAAAAQASAAoAAAAAAAAAAQASAAsAAAAAAAAAAQASAAwAAAAAAAAAAQATAAAAAAAAAAAAAQATAAEAAAAAAAAAAQATAAIAAAAAAAAAAQATAAMAAAAAAAAAAQATAAQAAAAAAAAAAQATAAUAAAAAAAAAAQATAAYAAAAAAAAAAQATAAcAAAAAAAAAAQATAAgAAAAAAAAAAQATAAkAAAAAAAAAAQATAAoAAAAAAAAAAQATAAsAAAAAAAAAAQATAAwAAAAAAAAAAQAUAAAAAAAAAAAAAQAUAAEAAAAAAAAAAQAUAAIAAAAAAAAAAQAUAAMAAAAAAAAAAQAUAAQAAAAAAAAAAQAUAAUAAAAAAAAAAQAUAAYAAAAAAAAAAQAUAAcAAAAAAAAAAQAUAAgAAAAAAAAAAQAUAAkAAAAAAAAAAQAUAAoAAAAAAAAAAQAUAAsAAAAAAAAAAQAUAAwAAAAAAAAAAQAVAAAAAAAAAAAAAQAVAAEAAAAAAAAAAQAVAAIAAAAAAAAAAQAVAAMAAAAAAAAAAQAVAAQAAAAAAAAAAQAVAAUAAAAAAAAAAQAVAAYAAAAAAAAAAQAVAAcAAAAAAAAAAQAVAAgAAAAAAAAAAQAVAAkAAAAAAAAAAQAVAAoAAAAAAAAAAQAVAAsAAAAAAAAAAQAVAAwAAAAAAAAAAQAWAAAAAAAAAAAAAQAWAAEAAAAAAAAAAQAWAAIAAAAAAAAAAQAWAAMAAAAAAAAAAQAWAAQAAAAAAAAAAQAWAAUAAAAAAAAAAQAWAAYAAAAAAAAAAQAWAAcAAAAAAAAAAQAWAAgAAAAAAAAAAQAWAAkAAAAAAAAAAQAWAAoAAAAAAAAAAQAWAAsAAAAAAAAAAQAWAAwAAAAAAAAAAQAXAAAAAAAAAAAAAQAXAAEAAAAAAAAAAQAXAAIAAAAAAAAAAQAXAAMAAAAAAAAAAQAXAAQAAAAAAAAAAQAXAAUAAAAAAAAAAQAXAAYAAAAAAAAAAQAXAAcAAAAAAAAAAQAXAAgAAAAAAAAAAQAXAAkAAAAAAAAAAQAXAAoAAAAAAAAAAQAXAAsAAAAAAAAAAQAXAAwAAAAAAAAAAQAPAA0AAAAAAAAAAQAPAA4AAAAAAAAAAQAPAA8AAAAAAAAAAQAQAA0AAAAAAAAAAQAQAA4AAAAAAAAAAQAQAA8AAAAAAAAAAQARAA0AAAAAAAAAAQARAA4AAAAAAAAAAQARAA8AAAAAAAAAAQASAA0AAAAAAAAAAQASAA4AAAAAAAAAAQASAA8AAAAAAAAAAQATAA0AAAAAAAAAAQATAA4AAAAAAAAAAQATAA8AAAAAAAAAAQAUAA0AAAAAAAAAAQAUAA4AAAAAAAAAAQAUAA8AAAAAAAAAAQAVAA0AAAAAAAAAAQAVAA4AAAAAAAAAAQAVAA8AAAAAAAAAAQAWAA0AAAAAAAAAAQAWAA4AAAAAAAAAAQAWAA8AAAAAAAAAAQAXAA0AAAAAAAAAAQAXAA4AAAAAAAAAAQAXAA8AAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_jo2ul")
+
+[node name="Alice" parent="." instance=ExtResource("4_e4oev")]
+position = Vector2(513, 315)
+
+[node name="Trator" parent="." instance=ExtResource("5_yf7py")]
+position = Vector2(512, 226)
+
+[node name="TratorSound" type="AudioStreamPlayer2D" parent="Trator"]
+position = Vector2(-12, 114)
+stream = ExtResource("3_e4oev")
+volume_db = -2.0
+parameters/looping = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PanelContador" type="Panel" parent="HUD"]
+offset_left = 786.0
+offset_top = 571.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m8ymd")
+
+[node name="Contador" type="Label" parent="HUD/PanelContador"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 14.0
+offset_right = 340.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_m8ymd")
+theme_override_font_sizes/font_size = 20
+text = "Wheat: 288/288"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelTempo" type="Panel" parent="HUD"]
+offset_left = 1.0
+offset_right = 323.0
+offset_bottom = 76.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m8ymd")
+
+[node name="Tempo" type="Label" parent="HUD/PanelTempo"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 316.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_m8ymd")
+theme_override_font_sizes/font_size = 20
+text = "Timer: 01:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelInicio" type="Panel" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -78.5
+offset_right = 203.5
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/PanelInicio"]
+layout_mode = 0
+offset_left = 6.5
+offset_top = 12.5
+offset_right = 406.5
+offset_bottom = 66.5
+theme_override_fonts/font = ExtResource("6_m8ymd")
+text = "Joseph needs your help! 
+Collect as many wheat as 
+you can in 1 minute!"
+
+[node name="Button" type="Button" parent="HUD/PanelInicio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -62.5
+offset_right = 68.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_m8ymd")
+text = "LET'S GO!"
+
+[node name="PanelFim" type="Panel" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.25
+offset_top = -78.5
+offset_right = 246.25
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/PanelFim"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 29.0
+offset_right = 240.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_m8ymd")
+text = "Congratulations! 
+Joseph is very happy and glad!"
+horizontal_alignment = 1
+
+[node name="ButtonFim" type="Button" parent="HUD/PanelFim"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -62.5
+offset_right = 68.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_m8ymd")
+text = "LET'S GO!"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="TyleMapWheat/Area2D" to="TyleMapWheat/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200000" to="TyleMapWheat/@Area2D@200000" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200001" to="TyleMapWheat/@Area2D@200001" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200002" to="TyleMapWheat/@Area2D@200002" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200003" to="TyleMapWheat/@Area2D@200003" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200004" to="TyleMapWheat/@Area2D@200004" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200005" to="TyleMapWheat/@Area2D@200005" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200006" to="TyleMapWheat/@Area2D@200006" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200007" to="TyleMapWheat/@Area2D@200007" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200008" to="TyleMapWheat/@Area2D@200008" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200009" to="TyleMapWheat/@Area2D@200009" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200010" to="TyleMapWheat/@Area2D@200010" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200011" to="TyleMapWheat/@Area2D@200011" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200012" to="TyleMapWheat/@Area2D@200012" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200013" to="TyleMapWheat/@Area2D@200013" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200014" to="TyleMapWheat/@Area2D@200014" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200015" to="TyleMapWheat/@Area2D@200015" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200016" to="TyleMapWheat/@Area2D@200016" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200017" to="TyleMapWheat/@Area2D@200017" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200018" to="TyleMapWheat/@Area2D@200018" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200019" to="TyleMapWheat/@Area2D@200019" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200020" to="TyleMapWheat/@Area2D@200020" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200021" to="TyleMapWheat/@Area2D@200021" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200022" to="TyleMapWheat/@Area2D@200022" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200023" to="TyleMapWheat/@Area2D@200023" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200024" to="TyleMapWheat/@Area2D@200024" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200025" to="TyleMapWheat/@Area2D@200025" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200026" to="TyleMapWheat/@Area2D@200026" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200027" to="TyleMapWheat/@Area2D@200027" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200028" to="TyleMapWheat/@Area2D@200028" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200029" to="TyleMapWheat/@Area2D@200029" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200030" to="TyleMapWheat/@Area2D@200030" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200031" to="TyleMapWheat/@Area2D@200031" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200032" to="TyleMapWheat/@Area2D@200032" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200033" to="TyleMapWheat/@Area2D@200033" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200034" to="TyleMapWheat/@Area2D@200034" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200035" to="TyleMapWheat/@Area2D@200035" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200036" to="TyleMapWheat/@Area2D@200036" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200037" to="TyleMapWheat/@Area2D@200037" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200038" to="TyleMapWheat/@Area2D@200038" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200039" to="TyleMapWheat/@Area2D@200039" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200040" to="TyleMapWheat/@Area2D@200040" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200041" to="TyleMapWheat/@Area2D@200041" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200042" to="TyleMapWheat/@Area2D@200042" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200043" to="TyleMapWheat/@Area2D@200043" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200044" to="TyleMapWheat/@Area2D@200044" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200045" to="TyleMapWheat/@Area2D@200045" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200046" to="TyleMapWheat/@Area2D@200046" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200047" to="TyleMapWheat/@Area2D@200047" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200048" to="TyleMapWheat/@Area2D@200048" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200049" to="TyleMapWheat/@Area2D@200049" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200050" to="TyleMapWheat/@Area2D@200050" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200051" to="TyleMapWheat/@Area2D@200051" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200052" to="TyleMapWheat/@Area2D@200052" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200053" to="TyleMapWheat/@Area2D@200053" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200054" to="TyleMapWheat/@Area2D@200054" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200055" to="TyleMapWheat/@Area2D@200055" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200056" to="TyleMapWheat/@Area2D@200056" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200057" to="TyleMapWheat/@Area2D@200057" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200058" to="TyleMapWheat/@Area2D@200058" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200059" to="TyleMapWheat/@Area2D@200059" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200060" to="TyleMapWheat/@Area2D@200060" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200061" to="TyleMapWheat/@Area2D@200061" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200062" to="TyleMapWheat/@Area2D@200062" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200063" to="TyleMapWheat/@Area2D@200063" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200064" to="TyleMapWheat/@Area2D@200064" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200065" to="TyleMapWheat/@Area2D@200065" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200066" to="TyleMapWheat/@Area2D@200066" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200067" to="TyleMapWheat/@Area2D@200067" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200068" to="TyleMapWheat/@Area2D@200068" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200069" to="TyleMapWheat/@Area2D@200069" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200070" to="TyleMapWheat/@Area2D@200070" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200071" to="TyleMapWheat/@Area2D@200071" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200072" to="TyleMapWheat/@Area2D@200072" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200073" to="TyleMapWheat/@Area2D@200073" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200074" to="TyleMapWheat/@Area2D@200074" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200075" to="TyleMapWheat/@Area2D@200075" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200076" to="TyleMapWheat/@Area2D@200076" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200077" to="TyleMapWheat/@Area2D@200077" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200078" to="TyleMapWheat/@Area2D@200078" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200079" to="TyleMapWheat/@Area2D@200079" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200080" to="TyleMapWheat/@Area2D@200080" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200081" to="TyleMapWheat/@Area2D@200081" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200082" to="TyleMapWheat/@Area2D@200082" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200083" to="TyleMapWheat/@Area2D@200083" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200084" to="TyleMapWheat/@Area2D@200084" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200085" to="TyleMapWheat/@Area2D@200085" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200086" to="TyleMapWheat/@Area2D@200086" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200087" to="TyleMapWheat/@Area2D@200087" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200088" to="TyleMapWheat/@Area2D@200088" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200089" to="TyleMapWheat/@Area2D@200089" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200090" to="TyleMapWheat/@Area2D@200090" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200091" to="TyleMapWheat/@Area2D@200091" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200092" to="TyleMapWheat/@Area2D@200092" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200093" to="TyleMapWheat/@Area2D@200093" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200094" to="TyleMapWheat/@Area2D@200094" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200095" to="TyleMapWheat/@Area2D@200095" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200096" to="TyleMapWheat/@Area2D@200096" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200097" to="TyleMapWheat/@Area2D@200097" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200098" to="TyleMapWheat/@Area2D@200098" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200099" to="TyleMapWheat/@Area2D@200099" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200100" to="TyleMapWheat/@Area2D@200100" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200101" to="TyleMapWheat/@Area2D@200101" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200102" to="TyleMapWheat/@Area2D@200102" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200103" to="TyleMapWheat/@Area2D@200103" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200104" to="TyleMapWheat/@Area2D@200104" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200105" to="TyleMapWheat/@Area2D@200105" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200106" to="TyleMapWheat/@Area2D@200106" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200107" to="TyleMapWheat/@Area2D@200107" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200108" to="TyleMapWheat/@Area2D@200108" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200109" to="TyleMapWheat/@Area2D@200109" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200110" to="TyleMapWheat/@Area2D@200110" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200111" to="TyleMapWheat/@Area2D@200111" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200112" to="TyleMapWheat/@Area2D@200112" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200113" to="TyleMapWheat/@Area2D@200113" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200114" to="TyleMapWheat/@Area2D@200114" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200115" to="TyleMapWheat/@Area2D@200115" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200116" to="TyleMapWheat/@Area2D@200116" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200117" to="TyleMapWheat/@Area2D@200117" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200118" to="TyleMapWheat/@Area2D@200118" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200119" to="TyleMapWheat/@Area2D@200119" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200120" to="TyleMapWheat/@Area2D@200120" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200121" to="TyleMapWheat/@Area2D@200121" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200122" to="TyleMapWheat/@Area2D@200122" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200123" to="TyleMapWheat/@Area2D@200123" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200124" to="TyleMapWheat/@Area2D@200124" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200125" to="TyleMapWheat/@Area2D@200125" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200126" to="TyleMapWheat/@Area2D@200126" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200127" to="TyleMapWheat/@Area2D@200127" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200128" to="TyleMapWheat/@Area2D@200128" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200129" to="TyleMapWheat/@Area2D@200129" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200130" to="TyleMapWheat/@Area2D@200130" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200131" to="TyleMapWheat/@Area2D@200131" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200132" to="TyleMapWheat/@Area2D@200132" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200133" to="TyleMapWheat/@Area2D@200133" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200134" to="TyleMapWheat/@Area2D@200134" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200135" to="TyleMapWheat/@Area2D@200135" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200136" to="TyleMapWheat/@Area2D@200136" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200137" to="TyleMapWheat/@Area2D@200137" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200138" to="TyleMapWheat/@Area2D@200138" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200139" to="TyleMapWheat/@Area2D@200139" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200140" to="TyleMapWheat/@Area2D@200140" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200141" to="TyleMapWheat/@Area2D@200141" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200142" to="TyleMapWheat/@Area2D@200142" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200143" to="TyleMapWheat/@Area2D@200143" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200144" to="TyleMapWheat/@Area2D@200144" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200145" to="TyleMapWheat/@Area2D@200145" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200146" to="TyleMapWheat/@Area2D@200146" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200147" to="TyleMapWheat/@Area2D@200147" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200148" to="TyleMapWheat/@Area2D@200148" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200149" to="TyleMapWheat/@Area2D@200149" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200150" to="TyleMapWheat/@Area2D@200150" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200151" to="TyleMapWheat/@Area2D@200151" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200152" to="TyleMapWheat/@Area2D@200152" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200153" to="TyleMapWheat/@Area2D@200153" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200154" to="TyleMapWheat/@Area2D@200154" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200155" to="TyleMapWheat/@Area2D@200155" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200156" to="TyleMapWheat/@Area2D@200156" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200157" to="TyleMapWheat/@Area2D@200157" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200158" to="TyleMapWheat/@Area2D@200158" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200159" to="TyleMapWheat/@Area2D@200159" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200160" to="TyleMapWheat/@Area2D@200160" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200161" to="TyleMapWheat/@Area2D@200161" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200162" to="TyleMapWheat/@Area2D@200162" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200163" to="TyleMapWheat/@Area2D@200163" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200164" to="TyleMapWheat/@Area2D@200164" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200165" to="TyleMapWheat/@Area2D@200165" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200166" to="TyleMapWheat/@Area2D@200166" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200167" to="TyleMapWheat/@Area2D@200167" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200168" to="TyleMapWheat/@Area2D@200168" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200169" to="TyleMapWheat/@Area2D@200169" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200170" to="TyleMapWheat/@Area2D@200170" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200171" to="TyleMapWheat/@Area2D@200171" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200172" to="TyleMapWheat/@Area2D@200172" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200173" to="TyleMapWheat/@Area2D@200173" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200174" to="TyleMapWheat/@Area2D@200174" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200175" to="TyleMapWheat/@Area2D@200175" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200176" to="TyleMapWheat/@Area2D@200176" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200177" to="TyleMapWheat/@Area2D@200177" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200178" to="TyleMapWheat/@Area2D@200178" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200179" to="TyleMapWheat/@Area2D@200179" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200180" to="TyleMapWheat/@Area2D@200180" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200181" to="TyleMapWheat/@Area2D@200181" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200182" to="TyleMapWheat/@Area2D@200182" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200183" to="TyleMapWheat/@Area2D@200183" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200184" to="TyleMapWheat/@Area2D@200184" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200185" to="TyleMapWheat/@Area2D@200185" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200186" to="TyleMapWheat/@Area2D@200186" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200187" to="TyleMapWheat/@Area2D@200187" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200188" to="TyleMapWheat/@Area2D@200188" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200189" to="TyleMapWheat/@Area2D@200189" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200190" to="TyleMapWheat/@Area2D@200190" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200191" to="TyleMapWheat/@Area2D@200191" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200192" to="TyleMapWheat/@Area2D@200192" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200193" to="TyleMapWheat/@Area2D@200193" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200194" to="TyleMapWheat/@Area2D@200194" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200195" to="TyleMapWheat/@Area2D@200195" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200196" to="TyleMapWheat/@Area2D@200196" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200197" to="TyleMapWheat/@Area2D@200197" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200198" to="TyleMapWheat/@Area2D@200198" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200199" to="TyleMapWheat/@Area2D@200199" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200200" to="TyleMapWheat/@Area2D@200200" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200201" to="TyleMapWheat/@Area2D@200201" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200202" to="TyleMapWheat/@Area2D@200202" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200203" to="TyleMapWheat/@Area2D@200203" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200204" to="TyleMapWheat/@Area2D@200204" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200205" to="TyleMapWheat/@Area2D@200205" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200206" to="TyleMapWheat/@Area2D@200206" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200207" to="TyleMapWheat/@Area2D@200207" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200208" to="TyleMapWheat/@Area2D@200208" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200209" to="TyleMapWheat/@Area2D@200209" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200210" to="TyleMapWheat/@Area2D@200210" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200211" to="TyleMapWheat/@Area2D@200211" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200212" to="TyleMapWheat/@Area2D@200212" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200213" to="TyleMapWheat/@Area2D@200213" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200214" to="TyleMapWheat/@Area2D@200214" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200215" to="TyleMapWheat/@Area2D@200215" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200216" to="TyleMapWheat/@Area2D@200216" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200217" to="TyleMapWheat/@Area2D@200217" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200218" to="TyleMapWheat/@Area2D@200218" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200219" to="TyleMapWheat/@Area2D@200219" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200220" to="TyleMapWheat/@Area2D@200220" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200221" to="TyleMapWheat/@Area2D@200221" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200222" to="TyleMapWheat/@Area2D@200222" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200223" to="TyleMapWheat/@Area2D@200223" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200224" to="TyleMapWheat/@Area2D@200224" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200225" to="TyleMapWheat/@Area2D@200225" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200226" to="TyleMapWheat/@Area2D@200226" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200227" to="TyleMapWheat/@Area2D@200227" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200228" to="TyleMapWheat/@Area2D@200228" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200229" to="TyleMapWheat/@Area2D@200229" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200230" to="TyleMapWheat/@Area2D@200230" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200231" to="TyleMapWheat/@Area2D@200231" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200232" to="TyleMapWheat/@Area2D@200232" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200233" to="TyleMapWheat/@Area2D@200233" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200234" to="TyleMapWheat/@Area2D@200234" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200235" to="TyleMapWheat/@Area2D@200235" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200236" to="TyleMapWheat/@Area2D@200236" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200237" to="TyleMapWheat/@Area2D@200237" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200238" to="TyleMapWheat/@Area2D@200238" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200239" to="TyleMapWheat/@Area2D@200239" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200240" to="TyleMapWheat/@Area2D@200240" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200241" to="TyleMapWheat/@Area2D@200241" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200242" to="TyleMapWheat/@Area2D@200242" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200243" to="TyleMapWheat/@Area2D@200243" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200244" to="TyleMapWheat/@Area2D@200244" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200245" to="TyleMapWheat/@Area2D@200245" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200246" to="TyleMapWheat/@Area2D@200246" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200247" to="TyleMapWheat/@Area2D@200247" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200248" to="TyleMapWheat/@Area2D@200248" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200249" to="TyleMapWheat/@Area2D@200249" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200250" to="TyleMapWheat/@Area2D@200250" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200251" to="TyleMapWheat/@Area2D@200251" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200252" to="TyleMapWheat/@Area2D@200252" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200253" to="TyleMapWheat/@Area2D@200253" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200254" to="TyleMapWheat/@Area2D@200254" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200255" to="TyleMapWheat/@Area2D@200255" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200256" to="TyleMapWheat/@Area2D@200256" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200257" to="TyleMapWheat/@Area2D@200257" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200258" to="TyleMapWheat/@Area2D@200258" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200259" to="TyleMapWheat/@Area2D@200259" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200260" to="TyleMapWheat/@Area2D@200260" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200261" to="TyleMapWheat/@Area2D@200261" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200262" to="TyleMapWheat/@Area2D@200262" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200263" to="TyleMapWheat/@Area2D@200263" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200264" to="TyleMapWheat/@Area2D@200264" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200265" to="TyleMapWheat/@Area2D@200265" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200266" to="TyleMapWheat/@Area2D@200266" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200267" to="TyleMapWheat/@Area2D@200267" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200268" to="TyleMapWheat/@Area2D@200268" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200269" to="TyleMapWheat/@Area2D@200269" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200270" to="TyleMapWheat/@Area2D@200270" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200271" to="TyleMapWheat/@Area2D@200271" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200272" to="TyleMapWheat/@Area2D@200272" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200273" to="TyleMapWheat/@Area2D@200273" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200274" to="TyleMapWheat/@Area2D@200274" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200275" to="TyleMapWheat/@Area2D@200275" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200276" to="TyleMapWheat/@Area2D@200276" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200277" to="TyleMapWheat/@Area2D@200277" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200278" to="TyleMapWheat/@Area2D@200278" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200279" to="TyleMapWheat/@Area2D@200279" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200280" to="TyleMapWheat/@Area2D@200280" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200281" to="TyleMapWheat/@Area2D@200281" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200282" to="TyleMapWheat/@Area2D@200282" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200283" to="TyleMapWheat/@Area2D@200283" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200284" to="TyleMapWheat/@Area2D@200284" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200285" to="TyleMapWheat/@Area2D@200285" method="_on_body_entered"]
+[connection signal="body_entered" from="TyleMapWheat/@Area2D@200286" to="TyleMapWheat/@Area2D@200286" method="_on_body_entered"]
+[connection signal="pressed" from="HUD/PanelInicio/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HUD/PanelFim/ButtonFim" to="." method="_on_button_fim_pressed"]

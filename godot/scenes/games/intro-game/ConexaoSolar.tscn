@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmuitaox1ilxp"]
+
+[ext_resource type="Texture2D" uid="uid://bldxc1bo1djju" path="res://images/intro_game/Sol_semfundo.png" id="1_6mwe2"]
+[ext_resource type="Texture2D" uid="uid://bxs0vmf1waycl" path="res://images/intro_game/Estrelas.png" id="1_offg7"]
+[ext_resource type="Texture2D" uid="uid://ccjhigiat4jht" path="res://images/intro_game/panel.png" id="4_2wfp0"]
+[ext_resource type="PackedScene" uid="uid://dmq1e425nc7pc" path="res://components/intro_game/AnelPulso.tscn" id="4_f2m70"]
+[ext_resource type="Script" uid="uid://e3aiys5weu1r" path="res://scripts/intro_game/panel.gd" id="5_2wfp0"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_dux2t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dux2t"]
+texture = ExtResource("4_2wfp0")
+
+[node name="ConexaoSolar" type="Node2D"]
+
+[node name="Fundo" type="TextureRect" parent="."]
+offset_top = -31.999998
+offset_right = 4146.4287
+offset_bottom = 2468.0
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("1_offg7")
+
+[node name="Sol" type="TextureRect" parent="."]
+offset_left = 347.0
+offset_top = 110.0
+offset_right = 862.0
+offset_bottom = 594.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_6mwe2")
+
+[node name="AnelPulso" parent="." instance=ExtResource("4_f2m70")]
+position = Vector2(549, 298)
+scale = Vector2(3, 3)
+result_panel_path = NodePath("../PainelResultado")
+initial_radius = 118.37235569953918
+win_margin = 10.0
+
+[node name="PainelResultado" type="Panel" parent="."]
+offset_left = 1887.0
+offset_top = 1417.0
+offset_right = 2307.6665
+offset_bottom = 1497.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_dux2t")
+script = ExtResource("5_2wfp0")
+
+[node name="MensagemLabelWin" type="Label" parent="PainelResultado"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.143
+anchor_top = -3.6330001
+anchor_right = 1.143
+anchor_bottom = -3.6330001
+offset_left = -38.15515
+offset_top = -13.359985
+offset_right = 50.511353
+offset_bottom = 13.306671
+grow_horizontal = 2
+grow_vertical = 2
+focus_previous = NodePath(".")
+theme_override_fonts/font = ExtResource("6_dux2t")
+
+[node name="MensagemLabelLose" type="Label" parent="PainelResultado"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.097
+anchor_top = -3.3620002
+anchor_right = 1.097
+anchor_bottom = -3.3620002
+offset_left = -2.1378784
+offset_top = -29.0401
+offset_right = 37.86209
+offset_bottom = -6.0401

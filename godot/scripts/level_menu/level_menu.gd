@@ -32,9 +32,7 @@ func _on_iceland_pressed() -> void:
 
 func _on_eua_pressed() -> void:
 	print("USA")
-<<<<<<< Updated upstream
-=======
 	usa_visited = true
 	update_iceland()
 	#get_tree().change_scene_to_file("res://scenes/cutscene/farmer-cutscene/farmerCutscene.tscn")
->>>>>>> Stashed changes
+	get_tree().change_scene_to_file("res://scenes/cutscene/farmer-cutscene/farmerCutscene.tscn")

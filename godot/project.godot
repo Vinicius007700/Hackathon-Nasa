@@ -13,7 +13,14 @@ config_version=5
 config/name="godot"
 run/main_scene="uid://basyo0xq4cdpj"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://imagens/icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/intro_game/GameState.gd"
+
+[dotnet]
+
+project/assembly_name="godot"
 
 [rendering]
 
