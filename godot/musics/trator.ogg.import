@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/trator.ogg-836137831185f93d026db47a118aa879.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

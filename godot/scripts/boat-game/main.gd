@@ -18,6 +18,9 @@ const PIPE_RANGE: int = 200
 @onready var panelfinal_label = $HUD/PanelFim
 @onready var mensagemfinalwin_label = $HUD/PanelFim/Mensagem_fim_win
 @onready var mensagemfinallose_label = $HUD/PanelFim/Mensagem_fim_lose
+@onready var water_sound = $WaterSound
+@onready var back_sound = $BackgroundSound
+@onready var motor_sound = $MotorSound
 
 func _ready():
 	screen_size = get_window().size
@@ -29,6 +32,8 @@ func new_game():
 	for log in logs:
 		log.queue_free()
 	logs.clear()
+	water_sound.play()
+	back_sound.play()
 	
 	game_running = false
 	game_over = false
