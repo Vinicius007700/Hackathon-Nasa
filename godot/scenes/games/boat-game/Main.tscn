@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://blo2r51motf8y"]
+[gd_scene load_steps=8 format=3 uid="uid://blo2r51motf8y"]
 
-[ext_resource type="Script" uid="uid://bv55kdlum48vf" path="res://scenes/games/boat-game/main.gd" id="1_b3v7m"]
+[ext_resource type="Script" uid="uid://bv55kdlum48vf" path="res://scripts/boat-game/main.gd" id="1_b3v7m"]
 [ext_resource type="PackedScene" uid="uid://bxhwjwc4ahsrq" path="res://scripts/boat-game/boat.tscn" id="2_7y0yw"]
 [ext_resource type="Texture2D" uid="uid://cqgghr7sl4u2h" path="res://images/boat-game/river.png" id="2_616lh"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="4_616lh"]
+[ext_resource type="AudioStream" uid="uid://bya1exhne1q6a" path="res://musics/trator.ogg" id="4_wsrhe"]
+[ext_resource type="AudioStream" uid="uid://bs0syqxecqmbt" path="res://musics/water.ogg" id="5_dl05q"]
+[ext_resource type="AudioStream" uid="uid://cadtu72646jwh" path="res://musics/mingulay_boat_song.ogg" id="6_2w2tv"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_b3v7m")
@@ -15,6 +18,13 @@ texture = ExtResource("2_616lh")
 
 [node name="boat" parent="." instance=ExtResource("2_7y0yw")]
 position = Vector2(115, 360)
+
+[node name="MotorSound" type="AudioStreamPlayer2D" parent="boat"]
+position = Vector2(-115, -360)
+stream = ExtResource("4_wsrhe")
+volume_db = -15.0
+autoplay = true
+playback_type = 1
 
 [node name="LogTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -83,5 +93,15 @@ theme_override_fonts/font = ExtResource("4_616lh")
 text = "Oh no! You crashed  
 Raimundo's boat. Right-click
 to help him again."
+
+[node name="WaterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dl05q")
+volume_db = -10.0
+
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2w2tv")
+volume_db = -10.0
+autoplay = true
+playback_type = 1
 
 [connection signal="timeout" from="LogTimer" to="." method="_on_log_timer_timeout"]

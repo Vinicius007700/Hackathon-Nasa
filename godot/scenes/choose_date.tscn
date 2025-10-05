@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://1rouyhkngtnf"]
+[gd_scene load_steps=6 format=3 uid="uid://1rouyhkngtnf"]
 
 [ext_resource type="Script" uid="uid://bofsy5yftdkb4" path="res://scripts/choose_date/choose_date.gd" id="1_5hqja"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="1_8hxev"]
+[ext_resource type="AudioStream" uid="uid://bdccdq83nhmj8" path="res://musics/space_music.ogg" id="3_emavx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hqja"]
 bg_color = Color(0.033853274, 0.03385329, 0.033853233, 1)
@@ -99,6 +100,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ApiRequest" type="HTTPRequest" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_emavx")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Button2025" to="." method="_on_button_2025_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2024" to="." method="_on_button_2024_pressed"]
