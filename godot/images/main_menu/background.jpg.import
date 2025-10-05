@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/main_menu/background.jpg"
+source_file="res://imagens/main_menu/background.jpg"
 dest_files=["res://.godot/imported/background.jpg-aa039dab9670a30e9845f1da1d402257.ctex"]
 
 [params]
