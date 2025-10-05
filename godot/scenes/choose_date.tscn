@@ -53,6 +53,7 @@ theme_override_constants/separation = 14
 [node name="Button2025" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8hxev")
 
 [node name="Label" type="Label" parent="VBoxContainer/Button2025"]
@@ -68,6 +69,7 @@ vertical_alignment = 1
 [node name="Button2024" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8hxev")
 
 [node name="Label" type="Label" parent="VBoxContainer/Button2024"]
@@ -83,6 +85,7 @@ vertical_alignment = 1
 [node name="Button2023" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8hxev")
 
 [node name="Label" type="Label" parent="VBoxContainer/Button2023"]
