@@ -13,7 +13,7 @@ config_version=5
 config/name="godot"
 run/main_scene="uid://basyo0xq4cdpj"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://images/icon.svg"
+config/icon="res://imagens/icon.svg"
 
 [rendering]
 
