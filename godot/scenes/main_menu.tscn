@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://basyo0xq4cdpj"]
 
-[ext_resource type="Script" uid="uid://dbfanmqkl2voy" path="res://scripts/main_menu/main_menu.gd" id="1_8traf"]
-[ext_resource type="Texture2D" uid="uid://c8pc6peyu2e1l" path="res://imagens/main_menu/background.jpg" id="2_y7el5"]
-[ext_resource type="Texture2D" uid="uid://trecm7sagipa" path="res://imagens/main_menu/title.png" id="3_2sprr"]
-[ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://scripts/main_menu/logo.gd" id="4_l2g2h"]
-[ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://imagens/main_menu/pixil-frame-0.png" id="5_ynqx3"]
+[ext_resource type="Script" uid="uid://dbfanmqkl2voy" path="res://scripts/main_menu/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c8pc6peyu2e1l" path="res://images/main_menu/background.jpg" id="2_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://trecm7sagipa" path="res://images/main_menu/title.png" id="3_oa1go"]
+[ext_resource type="Script" uid="uid://dm85b24ojopkt" path="res://scripts/main_menu/logo.gd" id="4_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://images/main_menu/pixil-frame-0.png" id="5_jk1qb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
-texture = ExtResource("2_y7el5")
+texture = ExtResource("2_rtw2f")
 modulate_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
 
 [node name="MainMenu" type="Control"]
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8traf")
+script = ExtResource("1_8ln24")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -40,8 +40,8 @@ offset_top = 96.0
 offset_right = 206.0
 offset_bottom = 325.0
 grow_horizontal = 2
-texture = ExtResource("3_2sprr")
-script = ExtResource("4_l2g2h")
+texture = ExtResource("3_oa1go")
+script = ExtResource("4_tbmy8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -59,7 +59,7 @@ theme_override_constants/separation = 150
 
 [node name="FastGameButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_ynqx3")
+texture_normal = ExtResource("5_jk1qb")
 
 [node name="Label" type="Label" parent="VBoxContainer/FastGameButton"]
 layout_mode = 0
@@ -74,7 +74,7 @@ vertical_alignment = 1
 
 [node name="FullGameButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_ynqx3")
+texture_normal = ExtResource("5_jk1qb")
 
 [node name="Label" type="Label" parent="VBoxContainer/FullGameButton"]
 layout_mode = 0
@@ -89,7 +89,7 @@ vertical_alignment = 1
 
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_ynqx3")
+texture_normal = ExtResource("5_jk1qb")
 
 [node name="Label" type="Label" parent="VBoxContainer/ExitButton"]
 layout_mode = 0

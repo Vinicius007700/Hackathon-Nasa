@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://d3sn0dxs6h578"]
 
 [ext_resource type="Script" uid="uid://ba1brqnyfqhry" path="res://scripts/level_menu/level_menu.gd" id="1_2gqye"]
-[ext_resource type="Texture2D" uid="uid://dcpundjbm6rlm" path="res://imagens/level_menu/mundi.png" id="1_poif0"]
-[ext_resource type="Texture2D" uid="uid://be2kjg81hnd" path="res://imagens/level_menu/pixil-frame-0 (1).png" id="2_mwq4c"]
-[ext_resource type="Texture2D" uid="uid://rc3v1iw7c0sc" path="res://imagens/level_menu/panel.png" id="4_o1nls"]
+[ext_resource type="Texture2D" uid="uid://dcpundjbm6rlm" path="res://images/level_menu/mundi.png" id="1_poif0"]
+[ext_resource type="Texture2D" uid="uid://be2kjg81hnd" path="res://images/level_menu/pixil-frame-0 (1).png" id="2_mwq4c"]
+[ext_resource type="Texture2D" uid="uid://rc3v1iw7c0sc" path="res://images/level_menu/panel.png" id="4_o1nls"]
 [ext_resource type="Script" uid="uid://bgc35cps12kty" path="res://scripts/level_menu/brazil_resume.gd" id="5_jsrvk"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_mkvq6"]
 [ext_resource type="Script" uid="uid://bs8srustd5h2i" path="res://scripts/level_menu/iceland_resume.gd" id="7_ugxk8"]
 [ext_resource type="Script" uid="uid://ccbb22h4oexj7" path="res://scripts/level_menu/usa_resume.gd" id="8_iqewy"]
-[ext_resource type="Script" uid="uid://xsp6bqliplws" path="res://cenarios/select_text.gd" id="9_ugxk8"]
+[ext_resource type="Script" uid="uid://xsp6bqliplws" path="res://scripts/level_menu/select_text.gd" id="9_ugxk8"]
 
 [sub_resource type="Theme" id="Theme_2gqye"]
 
@@ -216,7 +216,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("6_mkvq6")
 theme_override_font_sizes/font_size = 22
-text = "Selecione um local para visitar!"
+text = "Select a place to visit!"
 horizontal_alignment = 1
 script = ExtResource("9_ugxk8")
 

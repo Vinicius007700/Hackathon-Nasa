@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcpundjbm6rlm"
-path="res://.godot/imported/mundi.png-c086d5f6cd8a900463aaebbfd9203bb8.ctex"
+uid="uid://bq2ywabcdf87c"
+path="res://.godot/imported/cena_3.png-f794ee2dc534e09ab401d089b09c9457.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/level_menu/mundi.png"
-dest_files=["res://.godot/imported/mundi.png-c086d5f6cd8a900463aaebbfd9203bb8.ctex"]
+source_file="res://images/book/cena_3.png"
+dest_files=["res://.godot/imported/cena_3.png-f794ee2dc534e09ab401d089b09c9457.ctex"]
 
 [params]
 
