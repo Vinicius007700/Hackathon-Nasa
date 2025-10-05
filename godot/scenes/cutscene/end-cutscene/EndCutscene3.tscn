@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqrdnxnwccbpv"]
 
-[ext_resource type="PackedScene" uid="uid://cjayovjieqmgf" path="res://components/BookFull/bookFull-text-top.tscn" id="1_xitbk"]
+[ext_resource type="PackedScene" path="res://components/BookFull/bookFull-text-top.tscn" id="1_xitbk"]
 [ext_resource type="AudioStream" uid="uid://d1offppax47u4" path="res://musics/aurora.ogg" id="2_jy63q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jy63q"]
