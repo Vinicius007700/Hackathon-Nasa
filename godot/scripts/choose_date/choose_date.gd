@@ -43,4 +43,4 @@ func _on_api_request_completed(result, response_code, headers, body):
 
 # A função de redirecionamento permanece a mesma
 func redirect():
-	get_tree().change_scene_to_file("res://scenes/book_cutscene.tscn")
+	get_tree().change_scene_to_file("res://scenes/cutscene/intial-cutscenes/book1Scene.tscn")

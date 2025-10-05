@@ -61,6 +61,7 @@ theme_override_constants/separation = 150
 
 [node name="FullGameButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_rtw2f")
 
 [node name="Label" type="Label" parent="VBoxContainer/FullGameButton"]
@@ -77,6 +78,7 @@ vertical_alignment = 1
 
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_rtw2f")
 
 [node name="Label" type="Label" parent="VBoxContainer/ExitButton"]
