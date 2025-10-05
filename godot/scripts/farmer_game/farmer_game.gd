@@ -31,7 +31,7 @@ func trigo_foi_coletado():
 		fim_de_jogo()
 
 func atualizar_contador_ui():
-	contador_label.text = "Milhos: %d/288" % [contador_de_trigos]
+	contador_label.text = "Wheat: %d/288" % [contador_de_trigos]
 	
 func _on_cronometro_timeout():
 	tempo_restante_em_segundos -= 1
