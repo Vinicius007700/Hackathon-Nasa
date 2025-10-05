@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkk6s48ui1ygf"]
+[gd_scene load_steps=3 format=3 uid="uid://bkk6s48ui1ygf"]
 
 [ext_resource type="Script" uid="uid://ood5cgdssdf" path="res://scripts/Book_full/Book_full.gd" id="1_tuoxn"]
+[ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://imagens/main_menu/pixil-frame-0.png" id="2_fbt7c"]
 
 [node name="Book_full" type="Control"]
 layout_mode = 3
@@ -15,4 +16,23 @@ script = ExtResource("1_tuoxn")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Tela do livro full"
+text = "Botao full filter"
+
+[node name="TestFilterFullButton" type="TextureButton" parent="."]
+layout_mode = 0
+texture_normal = ExtResource("2_fbt7c")
+
+[node name="Label" type="Label" parent="TestFilterFullButton"]
+layout_mode = 0
+offset_left = -0.00041770935
+offset_top = 0.00036621094
+offset_right = 2071.4282
+offset_bottom = 757.14343
+theme_override_font_sizes/font_size = 250
+text = "Fast Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="APIRequest_FilterFull" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="TestFilterFullButton" to="." method="_on_test_filter_full_buton_pressed"]

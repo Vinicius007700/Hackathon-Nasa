@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://berrfnextut8k"]
+[gd_scene load_steps=3 format=3 uid="uid://berrfnextut8k"]
 
 [ext_resource type="Script" uid="uid://blyo7fo28qpr3" path="res://scripts/Book_fast/Book_fast.gd" id="1_f8nin"]
+[ext_resource type="Texture2D" uid="uid://cvyi7cmviwyb2" path="res://imagens/main_menu/pixil-frame-0.png" id="2_6qj7g"]
 
 [node name="Book_fast" type="Control"]
 layout_mode = 3
@@ -16,3 +17,22 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Book Fast"
+
+[node name="TestFilterButton" type="TextureButton" parent="."]
+layout_mode = 0
+texture_normal = ExtResource("2_6qj7g")
+
+[node name="Label" type="Label" parent="TestFilterButton"]
+layout_mode = 0
+offset_left = -0.00041770935
+offset_top = 0.00036621094
+offset_right = 2071.4282
+offset_bottom = 757.14343
+theme_override_font_sizes/font_size = 250
+text = "Testar API de Filtro (Fast)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="APIRequest_Filter" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="TestFilterButton" to="." method="_on_test_filter_button_pressed"]
