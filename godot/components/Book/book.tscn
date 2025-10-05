@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://t5jbimre8hox" path="res://scripts/Book-component/book.gd" id="1_em4jt"]
 [ext_resource type="Texture2D" uid="uid://crwivkdutveq0" path="res://images/book/cena_1.png" id="2_w1pjc"]
-[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_ph5nd"]
+[ext_resource type="FontFile" uid="uid://bvq8edsvgdcoe" path="res://fonts/Handwriting-Regular.otf" id="3_ph5nd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udo5r"]
 bg_color = Color(0, 0, 0, 0)
@@ -112,6 +112,7 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_ph5nd")
+theme_override_font_sizes/normal_font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ph5nd")
 text = "asfsgsgasdbasdgaavdbag"
 
