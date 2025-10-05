@@ -17,7 +17,7 @@ texture = ExtResource("2_616lh")
 position = Vector2(115, 360)
 
 [node name="LogTimer" type="Timer" parent="."]
-wait_time = 2.807
+wait_time = 7.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -80,7 +80,7 @@ offset_top = 12.0
 offset_right = 595.0
 offset_bottom = 87.0
 theme_override_fonts/font = ExtResource("4_616lh")
-text = "Oh no! You crashed  
+text = "Oh no! You crashed the 
 Raimundo's boat. Right-click
 to help him again."
 
