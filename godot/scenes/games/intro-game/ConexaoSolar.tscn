@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmuitaox1ilxp"]
 
-[ext_resource type="Texture2D" uid="uid://bldxc1bo1djju" path="res://images/intro_game/Sol_semfundo.png" id="1_6mwe2"]
-[ext_resource type="Texture2D" uid="uid://bxs0vmf1waycl" path="res://images/intro_game/Estrelas.png" id="1_offg7"]
+[ext_resource type="Texture2D" uid="uid://ctynnq4irvnk0" path="res://new_space.png" id="1_aehqy"]
+[ext_resource type="Texture2D" uid="uid://bgx16i5or4o2e" path="res://images/new_sun.png" id="2_761cf"]
 [ext_resource type="Texture2D" uid="uid://ccjhigiat4jht" path="res://images/intro_game/panel.png" id="4_2wfp0"]
 [ext_resource type="PackedScene" uid="uid://dmq1e425nc7pc" path="res://components/intro_game/AnelPulso.tscn" id="4_f2m70"]
 [ext_resource type="Script" uid="uid://e3aiys5weu1r" path="res://scripts/intro_game/panel.gd" id="5_2wfp0"]
@@ -17,24 +17,25 @@ offset_top = -31.999998
 offset_right = 4146.4287
 offset_bottom = 2468.0
 scale = Vector2(0.28, 0.28)
-texture = ExtResource("1_offg7")
+texture = ExtResource("1_aehqy")
 
 [node name="Sol" type="TextureRect" parent="."]
 offset_left = 347.0
-offset_top = 110.0
+offset_top = 95.0
 offset_right = 862.0
-offset_bottom = 594.0
+offset_bottom = 579.0
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_6mwe2")
+texture = ExtResource("2_761cf")
 
 [node name="AnelPulso" parent="." instance=ExtResource("4_f2m70")]
 position = Vector2(549, 298)
 scale = Vector2(3, 3)
 result_panel_path = NodePath("../PainelResultado")
-initial_radius = 118.37235569953918
+initial_radius = 104.60458278656006
 win_margin = 10.0
 
 [node name="PainelResultado" type="Panel" parent="."]
+visible = false
 offset_left = 1887.0
 offset_top = 1417.0
 offset_right = 2307.6665

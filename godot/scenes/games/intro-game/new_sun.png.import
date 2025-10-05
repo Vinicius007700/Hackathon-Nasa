@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1sosvl73g3gv"
-path="res://.godot/imported/disble_pin.png-0209335076c9ab0396e550d986426bd6.ctex"
+uid="uid://br5n5eq5tqc4t"
+path="res://.godot/imported/new_sun.png-57a81ced80d8c206de5e07c1ab10de27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/level_menu/disble_pin.png"
-dest_files=["res://.godot/imported/disble_pin.png-0209335076c9ab0396e550d986426bd6.ctex"]
+source_file="res://scenes/games/intro-game/new_sun.png"
+dest_files=["res://.godot/imported/new_sun.png-57a81ced80d8c206de5e07c1ab10de27.ctex"]
 
 [params]
 
