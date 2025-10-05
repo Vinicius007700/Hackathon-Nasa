@@ -65,6 +65,6 @@ def generate_story_endpoint(year: int):
         return {"error": "Os dados ainda não foram carregados. Chame /api/load-game-data primeiro."}
 
     # Chama a função principal do motor do jogo, passando os dados que estão na memória
-    story_package = load_data.select_random_top_storm_for_year(year, MASTER_DB, ALL_STORMS)
+    story_package = load_data.select_random_top_storm_for_year(year, ALL_STORMS)
     
     return story_package
