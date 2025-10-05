@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmuitaox1ilxp"]
 
-[ext_resource type="Texture2D" uid="uid://bldxc1bo1djju" path="res://cenarios/games/intro-game/Sol_semfundo.png" id="1_6mwe2"]
-[ext_resource type="Texture2D" uid="uid://bxs0vmf1waycl" path="res://cenarios/games/intro-game/Estrelas.png" id="1_offg7"]
-[ext_resource type="Texture2D" uid="uid://ccjhigiat4jht" path="res://cenarios/games/intro-game/panel.png" id="4_2wfp0"]
-[ext_resource type="PackedScene" uid="uid://dmq1e425nc7pc" path="res://cenarios/games/intro-game/AnelPulso.tscn" id="4_f2m70"]
-[ext_resource type="Script" uid="uid://e3aiys5weu1r" path="res://cenarios/games/intro-game/panel.gd" id="5_2wfp0"]
-[ext_resource type="FontFile" uid="uid://55ubwlpcmcob" path="res://cenarios/games/PressStart2P-Regular.ttf" id="6_dux2t"]
+[ext_resource type="Texture2D" uid="uid://bldxc1bo1djju" path="res://images/intro_game/Sol_semfundo.png" id="1_6mwe2"]
+[ext_resource type="Texture2D" uid="uid://bxs0vmf1waycl" path="res://images/intro_game/Estrelas.png" id="1_offg7"]
+[ext_resource type="Texture2D" uid="uid://ccjhigiat4jht" path="res://images/intro_game/panel.png" id="4_2wfp0"]
+[ext_resource type="PackedScene" uid="uid://dmq1e425nc7pc" path="res://components/intro_game/AnelPulso.tscn" id="4_f2m70"]
+[ext_resource type="Script" uid="uid://e3aiys5weu1r" path="res://scripts/intro_game/panel.gd" id="5_2wfp0"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="6_dux2t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dux2t"]
 texture = ExtResource("4_2wfp0")

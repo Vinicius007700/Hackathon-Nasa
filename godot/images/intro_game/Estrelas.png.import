@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bldxc1bo1djju"
-path="res://.godot/imported/Sol_semfundo.png-060615eacfb49a9ddbef8eae48daf29e.ctex"
+uid="uid://bxs0vmf1waycl"
+path="res://.godot/imported/Estrelas.png-1e9c50746b03180c817898783399342b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenarios/games/intro-game/Sol_semfundo.png"
-dest_files=["res://.godot/imported/Sol_semfundo.png-060615eacfb49a9ddbef8eae48daf29e.ctex"]
+source_file="res://images/intro_game/Estrelas.png"
+dest_files=["res://.godot/imported/Estrelas.png-1e9c50746b03180c817898783399342b.ctex"]
 
 [params]
 

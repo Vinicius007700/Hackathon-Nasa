@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4rwk51g3v4cw"
-path="res://.godot/imported/cena_5.png-20d94b3bf7d6eccb4580b7d74f2368c1.ctex"
+uid="uid://ccjhigiat4jht"
+path="res://.godot/imported/panel.png-bb620ad80d1b0bcc8e727439f132f1b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/cena_5.png"
-dest_files=["res://.godot/imported/cena_5.png-20d94b3bf7d6eccb4580b7d74f2368c1.ctex"]
+source_file="res://images/intro_game/panel.png"
+dest_files=["res://.godot/imported/panel.png-bb620ad80d1b0bcc8e727439f132f1b0.ctex"]
 
 [params]
 
