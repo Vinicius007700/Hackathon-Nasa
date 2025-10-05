@@ -21,6 +21,7 @@ func _on_brazil_pressed() -> void:
 	print("Brazil")
 	brazil_visited = true
 	update_iceland()
+	get_tree().change_scene_to_file("res://scenes/cutscene/fisher-cutscene/FisherCutscene.tscn")
 
 
 func _on_iceland_pressed() -> void:

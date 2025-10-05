@@ -31,7 +31,7 @@ texture = ExtResource("2_761cf")
 position = Vector2(549, 298)
 scale = Vector2(3, 3)
 result_panel_path = NodePath("../PainelResultado")
-initial_radius = 104.60458278656006
+initial_radius = 62.50038
 win_margin = 10.0
 
 [node name="PainelResultado" type="Panel" parent="."]
