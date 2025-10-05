@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqrdnxnwccbpv"]
+
+[ext_resource type="PackedScene" path="res://components/BookFull/bookFull-text-top.tscn" id="1_xitbk"]
+[ext_resource type="AudioStream" uid="uid://d1offppax47u4" path="res://musics/aurora.ogg" id="2_jy63q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jy63q"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="EndCutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jy63q")
+
+[node name="Book" parent="Panel" instance=ExtResource("1_xitbk")]
+layout_mode = 1
+data_path = "res://scenes/cutscene/end-cutscene/endCutscene3.json"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jy63q")
+autoplay = true

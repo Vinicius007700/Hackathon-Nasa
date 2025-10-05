@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0yfhmqfstqco"]
+
+[ext_resource type="PackedScene" uid="uid://b28v0t4x4uqfc" path="res://components/Book/book.tscn" id="1_t5jom"]
+
+[node name="FisherCutscene2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Book" parent="." instance=ExtResource("1_t5jom")]
+layout_mode = 1
+data_path = "res://scenes/cutscene/fisher-cutscene/fisher2.json"
+next = "res://scripts/boat-game/main.gd"

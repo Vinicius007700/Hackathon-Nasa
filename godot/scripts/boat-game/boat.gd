@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+@onready var motor_sound = $MotorSound
+
 signal hit
 const SPEED_Y := 300   # velocidade vertical
 const SPEED_X := 500   # velocidade horizontal constante
@@ -17,6 +20,8 @@ func reset():
 	rotation = 0
 
 func _physics_process(delta: float):
+	
+	motor_sound.play()
  
 	# Movimento vertical controlado
 	if Input.is_action_pressed("ui_up"):

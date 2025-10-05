@@ -1,0 +1,6 @@
+{
+  "image": "res://images/book/cena_9.png",
+  "pages": [
+    "Aline arrives and meets Krístin, an aurora specialist, to analyze NASA data.\n\t\n\tKrístin: \"It took you long enough to get here. I've known since last week that you were coming!\"\n\t\n\tHearing that voice, Aline is surprised and speechless, but Krístin quickly explains that she predicted it using data from DONKI, a NASA API that provides various data related to Space Weather, like Coronal Mass Ejection and Kp-index. These are all phenomena that impact people's lives, as Aline realized during her journey. Krístin adds that by combining this data, the implications are not always harmful—a beautiful example being the aurora borealis.\n\t\n\tKrístin: \"If you hurry, you can still see an aurora.\"\n\t\n\tAline is amazed, because she had never seen one, and says to Luma, \"Let's go, quickly!\""
+  ]
+}
