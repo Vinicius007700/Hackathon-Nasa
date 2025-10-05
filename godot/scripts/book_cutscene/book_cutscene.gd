@@ -3,6 +3,7 @@ extends Control
 @onready var page_display: TextureRect = $TextureRect/PageDisplay
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var botao_proximo: Button = $BotaoProximo
+@onready var som_livro = $SomLivro
 
 var pages := [
 	preload("res://images/book/cena_1.png"),

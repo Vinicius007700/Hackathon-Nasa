@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://wwwlfihaa1p4"]
+[gd_scene load_steps=12 format=3 uid="uid://wwwlfihaa1p4"]
 
 [ext_resource type="Script" uid="uid://t5jbimre8hox" path="res://scripts/Book-component/book.gd" id="1_pblwu"]
 [ext_resource type="Texture2D" uid="uid://dut5kgbc7eppw" path="res://images/book/cena_4.png" id="2_3efij"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_yur4e"]
+[ext_resource type="AudioStream" uid="uid://dg0lwioayalea" path="res://musics/BookFlip11.wav" id="4_bdrdo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udo5r"]
 bg_color = Color(0, 0, 0, 0)
@@ -133,5 +134,8 @@ text = "Next Button"
 libraries = {
 &"": SubResource("AnimationLibrary_4chiv")
 }
+
+[node name="SomLivro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bdrdo")
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
