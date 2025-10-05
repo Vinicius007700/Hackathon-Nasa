@@ -40,7 +40,7 @@ func new_game():
 	$boat.hit.connect(boat_hit)
 	
 	# Configura a UI para o estado de "menu inicial".
-	time_label.text = "Tempo: 0"
+	time_label.text = "Timer: 30"
 	panelinicio_label.show()
 	panelfinal_label.hide()
 
@@ -92,7 +92,7 @@ func _process(delta: float):
 	#if int(game_time) % 5 == 0:
 		#generate_log()
 		
-	time_label.text = "Tempo: " + str(int(game_time))
+	time_label.text = "Timer: " + str(30 - int(game_time))
 	if game_time >= TIME_LIMIT:
 		stop_game(true) # O jogador venceu
 		return
