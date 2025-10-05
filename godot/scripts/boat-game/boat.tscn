@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxhwjwc4ahsrq"]
+
+[ext_resource type="Script" uid="uid://d0kp647emx8r" path="res://boat.gd" id="1_afxke"]
+[ext_resource type="Texture2D" uid="uid://dnw8s7qw71h0k" path="res://images/boat-game/canoe.png" id="2_afxke"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctr2l"]
+radius = 32.0
+height = 184.0
+
+[node name="boat" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 0
+script = ExtResource("1_afxke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ctr2l")
+
+[node name="AnimateSpite2D" type="Sprite2D" parent="."]
+position = Vector2(15.000002, 3.0000038)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("2_afxke")

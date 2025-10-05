@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://blo2r51motf8y"]
+
+[ext_resource type="Script" uid="uid://bv55kdlum48vf" path="res://scenes/games/boat-game/main.gd" id="1_b3v7m"]
+[ext_resource type="PackedScene" uid="uid://bxhwjwc4ahsrq" path="res://scripts/boat-game/boat.tscn" id="2_7y0yw"]
+[ext_resource type="Texture2D" uid="uid://cqgghr7sl4u2h" path="res://images/boat-game/river.png" id="2_616lh"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_b3v7m")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2339.4998, 327)
+scale = Vector2(9.123046, 5.0625)
+texture = ExtResource("2_616lh")
+
+[node name="boat" parent="." instance=ExtResource("2_7y0yw")]
+position = Vector2(115, 360)
+
+[node name="LogTimer" type="Timer" parent="."]
+wait_time = 7.0
+
+[connection signal="timeout" from="LogTimer" to="." method="_on_log_timer_timeout"]
