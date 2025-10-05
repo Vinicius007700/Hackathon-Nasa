@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmq1e425nc7pc"]
+
+[ext_resource type="Script" uid="uid://d0s20a0x2ukh5" path="res://cenarios/games/intro-game/anel_pulso.gd" id="1_fymk4"]
+
+[node name="AnelPulso" type="Node2D"]
+script = ExtResource("1_fymk4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
