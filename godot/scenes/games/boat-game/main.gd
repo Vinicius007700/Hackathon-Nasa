@@ -57,7 +57,7 @@ func start_game():
 
 # CORREÇÃO: A função de input foi completamente reescrita para lidar com os estados do jogo.
 func _input(event):
-	generate_log()
+	#generate_log()
 	# A função só reage a um clique de mouse.
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		
@@ -89,6 +89,9 @@ func _process(delta: float):
 		
 	# Atualiza o tempo e verifica a condição de vitória.
 	game_time += delta
+	#if int(game_time) % 5 == 0:
+		#generate_log()
+		
 	time_label.text = "Tempo: " + str(int(game_time))
 	if game_time >= TIME_LIMIT:
 		stop_game(true) # O jogador venceu
@@ -122,9 +125,6 @@ func stop_game(player_won: bool):
 		mensagemfinallose_label.show()
 		mensagemfinalwin_label.hide()
 
-func _on_LogTimer_timeout():
-	generate_log()
-
 func generate_log():
 	var new_log = log_scene.instantiate()
 	new_log.position.x = screen_size.x + PIPE_DELAY
@@ -139,3 +139,6 @@ func boat_hit():
 	stop_game(false)
 	
 # CORREÇÃO: Removida a função duplicada _on_log_timer_timeout
+
+func _on_log_timer_timeout() -> void:
+	generate_log()

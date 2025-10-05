@@ -17,7 +17,7 @@ texture = ExtResource("2_616lh")
 position = Vector2(115, 360)
 
 [node name="LogTimer" type="Timer" parent="."]
-wait_time = 2.807
+wait_time = 3.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
