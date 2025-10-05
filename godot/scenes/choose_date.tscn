@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://11cx10qx5byk"]
+
+[ext_resource type="Script" uid="uid://bofsy5yftdkb4" path="res://scenes/choose_date.gd" id="1_5hqja"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="1_8hxev"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hqja"]
+bg_color = Color(0.033853274, 0.03385329, 0.033853233, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hxev"]
+bg_color = Color(0.03529412, 0.03529412, 0.03529412, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+
+[node name="YearMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hqja")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hqja")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 121.0
+offset_right = 1153.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("1_8hxev")
+theme_override_font_sizes/font_size = 38
+text = "Select a year:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 262.0
+offset_right = 733.0
+offset_bottom = 532.0
+theme_override_constants/separation = 14
+
+[node name="Button2025" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8hxev")
+
+[node name="Label" type="Label" parent="VBoxContainer/Button2025"]
+layout_mode = 0
+offset_right = 336.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_8hxev")
+theme_override_font_sizes/font_size = 22
+text = "2025"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2024" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8hxev")
+
+[node name="Label" type="Label" parent="VBoxContainer/Button2024"]
+layout_mode = 0
+offset_right = 336.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_8hxev")
+theme_override_font_sizes/font_size = 22
+text = "2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2023" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8hxev")
+
+[node name="Label" type="Label" parent="VBoxContainer/Button2023"]
+layout_mode = 0
+offset_right = 336.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_8hxev")
+theme_override_font_sizes/font_size = 22
+text = "2023"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ApiRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/Button2025" to="." method="_on_button_2025_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2024" to="." method="_on_button_2024_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2023" to="." method="_on_button_2023_pressed"]
