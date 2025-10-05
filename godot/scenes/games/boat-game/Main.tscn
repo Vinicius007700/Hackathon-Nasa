@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://blo2r51motf8y"]
 
-[ext_resource type="Script" uid="uid://bv55kdlum48vf" path="res://scripts/boat-game/main.gd" id="1_b3v7m"]
+[ext_resource type="Script" path="res://scenes/games/boat-game/main.gd" id="1_b3v7m"]
 [ext_resource type="PackedScene" uid="uid://bxhwjwc4ahsrq" path="res://scripts/boat-game/boat.tscn" id="2_7y0yw"]
 [ext_resource type="Texture2D" uid="uid://cqgghr7sl4u2h" path="res://images/boat-game/river.png" id="2_616lh"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="4_616lh"]
