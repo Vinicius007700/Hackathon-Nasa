@@ -64,11 +64,7 @@ def generate_story_endpoint(year: int):
     if MASTER_DB is None or ALL_STORMS is None:
         return {"error": "Os dados ainda não foram carregados. Chame /api/load-game-data primeiro."}
 
-    # Chama a função principal do motor do jogo, passando os dados que estão na memória
-    chosen_storm = load_data.select_random_top_storm_for_year(year, ALL_STORMS)
-    
-    full_events_ids = load_data.get_full_event_chain_ids(chosen_storm, MASTER_DB)
+    final_package = load_data.generate_story_package_for_year(year, MASTER_DB, ALL_STORMS)
 
-    analyze_storm_causes = load_data.analyze_storm_dossier(full_events_ids, chosen_storm)
+    return final_package
 
-    return analyze_storm_causes
