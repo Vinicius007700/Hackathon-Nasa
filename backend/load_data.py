@@ -131,43 +131,96 @@ def get_event_time(event_type, chain_ids):
     return datetime.fromisoformat(event_id[:19])
 
 def gerar_roteiro_fazendeiro(analysis, chain_ids):
-    # ... (função gerar_roteiro_fazendeiro completa)
-    causa_ids = [eid for eid in chain_ids if EVENT_DEFINITIONS.get(eid.split('-')[-2], {}).get('categoria') == 'Causa']
-    aviso_dt = get_event_time('CME', causa_ids) or get_event_time('FLR', causa_ids) or get_event_time('HSS', causa_ids)
-    aviso_str = f"Notificação Push\n{aviso_dt.strftime('%d/%m %H:%M')} : Alerta de clima espacial. Causa: {analysis['causa_principal']}. Risco para GPS."
-    impacto_dt = get_event_time('MPC', chain_ids) or get_event_time('GST', chain_ids)
-    impacto_str = (f"Em {impacto_dt.strftime('%d/%m às %H:%M')}, Alice chega. No mesmo instante, os tratores de Joseph param. 'A tempestade chegou', diz ela. 'Seu GPS não vai funcionar, mas eu ajudo a guiar a colheita.'")
-    gst_dt = get_event_time('GST', chain_ids)
-    futuro_dt = gst_dt + timedelta(hours=24)
-    explicacao_str = (f"Mais tarde, Alice explica: 'Tudo começou com {analysis['causa_principal']}. A partir de {futuro_dt.strftime('%d/%m às %H:%M')}, o perigo continua... ({analysis['futuro_pos_impacto']})'")
-    return {"ato_1_aviso": aviso_str, "ato_2_impacto": impacto_str, "ato_3_explicacao": explicacao_str}
+    """
+    Generates a single narrative for the farmer Joseph explaining the solar effects,
+    including cause, GPS risk, and Kp level, without including Alice.
+    """
+    # Extract cause events
+    causa_ids = [eid for eid in chain_ids 
+                 if EVENT_DEFINITIONS.get(eid.split('-')[-2], {}).get('categoria') == 'Causa']
+    
+    # Get date/time of CME or other event
+    aviso_dt = get_event_time('CME', causa_ids) \
+               or get_event_time('FLR', causa_ids) \
+               or get_event_time('HSS', causa_ids)
+    
+    # Build narrative
+    narrative = f"""
+On {aviso_dt.strftime('%d/%m/%Y, %H:%M')}, Joseph noticed something was wrong with his machines.
+The GPS sensors started failing due to intense solar activity: {analysis['causa_principal']}.
+The peak Kp index recorded was {analysis['full_analysis']['max_kp']:.2f}, enough to stop communication with the tractors.
+
+Joseph had to manually manage the harvest, aware that geomagnetic storms can affect electronic agricultural systems.
+The event's effects continue, with expected outcomes: {analysis['full_analysis']['futuro_pos_impacto']}.
+"""
+    # Clean up unnecessary line breaks and spaces
+    narrative = "\n".join([line.strip() for line in narrative.strip().splitlines()])
+    
+    return {"ato_unico": narrative}
 
 def gerar_roteiro_pescador(analysis, chain_ids):
-    # ... (função gerar_roteiro_pescador completa)
+    """
+    Generates the narrative for Raimundo the fisherman in English,
+    only the narrative/falas, no scene titles.
+    """
     gst_dt = get_event_time('GST', chain_ids)
-    if not gst_dt: return {"erro": "Não foi possível determinar o tempo da tempestade."}
+    if not gst_dt:
+        return {"error": "Could not determine the storm time."}
+    
     pre_storm_dt = gst_dt - timedelta(hours=6)
-    cena1_str = (f"CENA 1: A CALMARIA\nData: {pre_storm_dt.strftime('%d/%m/%Y, %H:%M')}. Local: Costa do Brasil.\n"
-                 f"Raimundo prepara seu barco, confiando no seu GPS. Mal sabe ele que uma tempestade solar se aproxima.")
-    cena2_str = (f"CENA 2: O PERIGO NO MAR\nData: {gst_dt.strftime('%d/%m/%Y, %H:%M')}. Local: Mar aberto.\n"
-                 f"Longe da costa, o GPS de Raimundo apaga. Ele está perdido. Alice surge. 'Você foi pego por uma tempestade geomagnética!', ela diz. "
-                 f"'{analysis['consequencia_terra']} Seu GPS não voltará tão cedo.'")
-    return {"cena_1_calmaria": cena1_str, "cena_2_perigo": cena2_str}
+    
+    fala_1 = (
+        f"On {pre_storm_dt.strftime('%d/%m/%Y, %H:%M')}, Raimundo prepares his boat, trusting the GPS. "
+        f"Little does he know, a solar storm is approaching."
+    )
+    
+    fala_2 = (
+        f"At {gst_dt.strftime('%d/%m/%Y, %H:%M')}, far from the coast, Raimundo's GPS stops working. "
+        f"He is lost. Alice appears: 'You got caught by a geomagnetic storm!' "
+        f"'{analysis['consequencia_terra']} Your GPS will not work for a while.'"
+    )
+    
+    return {"fala_1": fala_1, "fala_2": fala_2}
+
 
 def gerar_roteiro_guia_aurora(analysis, chain_ids):
-    # ... (função gerar_roteiro_guia_aurora completa)
+    """
+    Generates the aurora guide narrative in English.
+    """
     gst_dt = get_event_time('GST', chain_ids)
-    if not gst_dt: return {"erro": "Não foi possível determinar o tempo da tempestade."}
+    if not gst_dt:
+        return {"error": "Could not determine the storm time."}
+
+    # First image: Kristín analyzing data
     previsao_dt = gst_dt - timedelta(hours=2)
-    cena1_str = (f"CENA 1: A PREVISÃO\nData: {previsao_dt.strftime('%d/%m/%Y, %H:%M')}. Local: Islândia.\n"
-                 f"Kristín analisa os dados da NASA e vê a previsão de Kp ({analysis['max_kp']:.0f}) e o Bz virando para o sul. 'Agora vai ser um espetáculo', ela sussurra.")
+    previsao_str = (
+        f"At {previsao_dt.strftime('%d/%m/%Y, %H:%M')} in Iceland, Kristín studies NASA data on her computer. "
+        f"She sees the Kp forecast ({analysis['full_analysis']['max_kp']:.0f}) and the Bz turning south. "
+        f"She senses something exciting is about to happen and expects Alice to arrive."
+    )
+
+    # Second image: Kristín with Alice, planning to watch the aurora
     chegada_dt = gst_dt
-    cena2_str = (f"CENA 2: A CHEGADA\nData: {chegada_dt.strftime('%d/%m/%Y, %H:%M')}.\n"
-                 f"Alice entra no observatório. Kristín a cumprimenta: 'Eu sabia que você viria. Os dados não mentem. O show está para começar.'")
+    chegada_str = (
+        f"At {chegada_dt.strftime('%d/%m/%Y, %H:%M')}, Alice joins Kristín. "
+        f"Kristín points to the sky and the data on her laptop: 'A geomagnetic storm is coming. "
+        f"Let's go see the aurora borealis!'"
+    )
+
+    # Third image: Watching the aurora
     show_dt = gst_dt + timedelta(hours=2)
-    cena3_str = (f"CENA 3: O ESPETÁCULO\nData: {show_dt.strftime('%d/%m/%Y, %H:%M')}.\n"
-                 f"Sob a aurora, Alice diz: 'Pensar que toda essa beleza foi causada por {analysis['causa_principal']}, uma explosão a 150 milhões de quilômetros.'")
-    return {"cena_1_previsao": cena1_str, "cena_2_chegada": cena2_str, "cena_3_espetaculo": cena3_str}
+    show_str = (
+        f"At {show_dt.strftime('%d/%m/%Y, %H:%M')}, under the northern lights, they watch in awe. "
+        f"'It's amazing that this beauty was caused by {analysis['causa_principal']}, "
+        f"an explosion 150 million kilometers away,' Kristín remarks."
+    )
+
+    return {
+        "guia_aurora_previsao": previsao_str,
+        "guia_aurora_chegada": chegada_str,
+        "guia_aurora_espetaculo": show_str
+    }
+
 
 def generate_story_package_for_year(year: int, master_db: dict, all_storms: list):
     """
