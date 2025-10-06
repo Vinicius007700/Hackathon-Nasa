@@ -8,15 +8,15 @@ from datetime import datetime, timedelta
 from rich import print
 
 CACHE_DIR = 'backend/cache'
-EVENT_DEFINITIONS = { # Dicionário completo EVENT_DEFINITIONS aqui...
-    "FLR": {"nome_completo": "Erupção Solar", "categoria": "Causa", "peso_impacto": 7}, 
-    "CME": {"nome_completo": "Ejeção de Massa Coronal", "categoria": "Causa", "peso_impacto": 9}, 
-    "HSS": {"nome_completo": "Fluxo de Vento de Alta Velocidade", "categoria": "Causa", "peso_impacto": 6}, 
-    "SEP": {"nome_completo": "Partículas Solares Energéticas", "categoria": "Viagem", "peso_impacto": 8}, 
-    "IPS": {"nome_completo": "Choque Interplanetário", "categoria": "Viagem", "peso_impacto": 5}, 
-    "MPC": {"nome_completo": "Cruzamento da Magnetopausa", "categoria": "Impacto", "peso_impacto": 4}, 
-    "GST": {"nome_completo": "Tempestade Geomagnética", "categoria": "Impacto", "peso_impacto": 10}, 
-    "RBE": {"nome_completo": "Aumento do Cinturão de Radiação", "categoria": "Pós-Impacto", "peso_impacto": 7}
+EVENT_DEFINITIONS = {  # Full EVENT_DEFINITIONS dictionary here...
+    "FLR": {"nome_completo": "Solar Flare", "categoria": "Causa", "peso_impacto": 7}, 
+    "CME": {"nome_completo": "Coronal Mass Ejection", "categoria": "Causa", "peso_impacto": 9}, 
+    "HSS": {"nome_completo": "High-Speed Solar Wind Stream", "categoria": "Causa", "peso_impacto": 6}, 
+    "SEP": {"nome_completo": "Solar Energetic Particles", "categoria": "Viagem", "peso_impacto": 8}, 
+    "IPS": {"nome_completo": "Interplanetary Shock", "categoria": "Viagem", "peso_impacto": 5}, 
+    "MPC": {"nome_completo": "Magnetopause Crossing", "categoria": "Impacto", "peso_impacto": 4}, 
+    "GST": {"nome_completo": "Geomagnetic Storm", "categoria": "Impacto", "peso_impacto": 10}, 
+    "RBE": {"nome_completo": "Radiation Belt Enhancement", "categoria": "Pós-Impacto", "peso_impacto": 7}
 }
 
 def load_all_data_on_demand():
@@ -108,15 +108,17 @@ def analyze_storm_dossier(chain_ids, gst_event):
     # Extração do Kp (intacta)
     max_kp = max(item.get('kpIndex', 0) for item in gst_event.get('allKpIndex', [])) if gst_event.get('allKpIndex') else 0
     
-    # Lógica de strings de consequência (intacta)
+        # Consequence strings logic (unchanged)
     if event_counts.get("MPC") and event_counts.get("GST"):
-        earth_consequence_str = f"O escudo magnético foi atingido (MPC), iniciando a Tempestade Geomagnética (GST) com pico de Kp {max_kp:.2f}."
+        earth_consequence_str = f"The magnetic shield was hit (MPC), triggering the Geomagnetic Storm (GST) with a peak Kp of {max_kp:.2f}."
     elif event_counts.get("GST"):
-        earth_consequence_str = f"Ocorreu uma Tempestade Geomagnética (GST) com pico de Kp {max_kp:.2f}."
-    else: earth_consequence_str = "Impacto geomagnético mínimo ou não registrado."
-    post_impact_outlook_str = "Efeitos de longo prazo mínimos."
+        earth_consequence_str = f"A Geomagnetic Storm (GST) occurred with a peak Kp of {max_kp:.2f}."
+    else:
+        earth_consequence_str = "Minimal or unrecorded geomagnetic impact."
+    post_impact_outlook_str = "Minimal long-term effects."
     if event_counts.get("RBE"):
-        post_impact_outlook_str = "Aumento no cinturão de radiação (RBE), um risco duradouro para satélites."
+        post_impact_outlook_str = "Increased radiation belt (RBE), a lasting risk for satellites."
+
         
     # <<< ADIÇÃO >>> Retornar também o max_kp para ser usado na história.
     return {
@@ -135,7 +137,7 @@ def gerar_roteiro_fazendeiro(analysis, chain_ids):
     aviso_dt = get_event_time('CME', cause_ids) or get_event_time('FLR', cause_ids) or get_event_time('HSS', cause_ids)
     if not aviso_dt:
         return {"ato_1_aviso": "No event time available for farmer's warning."}
-    aviso_str = f"Push Notification\n{aviso_dt.strftime('%d/%m %H:%M')} : Space weather alert. Cause: {analysis['causa_principal']}. GPS risk detected."
+    aviso_str = f"Push Notification {aviso_dt.strftime('%d/%m %H:%M')} : Space weather alert. Cause: {analysis['causa_principal']}. GPS risk detected."
 
     impacto_dt = get_event_time('MPC', chain_ids) or get_event_time('GST', chain_ids)
     if not impacto_dt:
@@ -184,13 +186,13 @@ def gerar_roteiro_guia_aurora(analysis, chain_ids):
     previsao_dt = gst_dt - timedelta(hours=2)
 
     cena1_str = (
-        f"SCENE 1: THE FORECAST\nDate: {previsao_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Iceland."
+        f"SCENE 1: THE FORECAST Date: {previsao_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Iceland."
         f"Kristín analyzes NASA data and sees the Kp forecast ({analysis['max_kp']:.0f}) and the Bz turning south. "
         f"'This will be a show,' she whispers."
     )
     chegada_dt = gst_dt
     cena2_str = (
-        f"SCENE 2: THE ARRIVAL Date: {chegada_dt.strftime('%d/%m/%Y, %H:%M')}.\n"
+        f"SCENE 2: THE ARRIVAL Date: {chegada_dt.strftime('%d/%m/%Y, %H:%M')}."
         f"Alice enters the observatory. Kristín greets her: 'I knew you would come. The data doesn’t lie. "
         f"The show is about to begin.'"
     )
