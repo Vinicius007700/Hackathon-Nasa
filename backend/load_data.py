@@ -164,11 +164,11 @@ def gerar_roteiro_pescador(analysis, chain_ids):
     pre_storm_dt = gst_dt - timedelta(hours=6)
 
     cena1_str = (
-        f"SCENE 1: THE CALM\nDate: {pre_storm_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Coast of Brazil.\n"
+        f"Date: {pre_storm_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Coast of Brazil."
         f"Raimundo prepares his boat, trusting his GPS. Little does he know, a solar storm is approaching."
     )
     cena2_str = (
-        f"SCENE 2: DANGER AT SEA\nDate: {gst_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Open sea.\n"
+        f"DANGER AT SEA Date: {gst_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Open sea."
         f"Far from the coast, Raimundo's GPS shuts down. He is lost. Alice appears. "
         f"'You got caught by a geomagnetic storm!' she says. "
         f"'{analysis['consequencia_terra']} Your GPS will not return anytime soon.'"
@@ -184,19 +184,19 @@ def gerar_roteiro_guia_aurora(analysis, chain_ids):
     previsao_dt = gst_dt - timedelta(hours=2)
 
     cena1_str = (
-        f"SCENE 1: THE FORECAST\nDate: {previsao_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Iceland.\n"
+        f"SCENE 1: THE FORECAST\nDate: {previsao_dt.strftime('%d/%m/%Y, %H:%M')}. Location: Iceland."
         f"Kristín analyzes NASA data and sees the Kp forecast ({analysis['max_kp']:.0f}) and the Bz turning south. "
         f"'This will be a show,' she whispers."
     )
     chegada_dt = gst_dt
     cena2_str = (
-        f"SCENE 2: THE ARRIVAL\nDate: {chegada_dt.strftime('%d/%m/%Y, %H:%M')}.\n"
+        f"SCENE 2: THE ARRIVAL Date: {chegada_dt.strftime('%d/%m/%Y, %H:%M')}.\n"
         f"Alice enters the observatory. Kristín greets her: 'I knew you would come. The data doesn’t lie. "
         f"The show is about to begin.'"
     )
     show_dt = gst_dt + timedelta(hours=2)
     cena3_str = (
-        f"SCENE 3: THE SPECTACLE\nDate: {show_dt.strftime('%d/%m/%Y, %H:%M')}.\n"
+        f"SCENE 3: THE SPECTACLE Date: {show_dt.strftime('%d/%m/%Y, %H:%M')}."
         f"Under the aurora, Alice says: 'To think that all this beauty was caused by {analysis['causa_principal']}, "
         f"an explosion 150 million kilometers away.'"
     )
