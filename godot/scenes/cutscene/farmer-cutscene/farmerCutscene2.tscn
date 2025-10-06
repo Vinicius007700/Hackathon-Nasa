@@ -14,6 +14,7 @@ grow_vertical = 2
 layout_mode = 1
 page_text = "Another day at work, Joseph is tending to his garden. He wants to get home as quickly as possible because today is his daughter Murphy's birthday.
 	But on that day, the registered Kp-index was higher than average, and the GPS on his machines stopped working.
-	... "
+	... 
+"
 image_path = "res://images/book/cena_5.png"
 next = "res://scenes/games/farmer_game/farmer_game.tscn"

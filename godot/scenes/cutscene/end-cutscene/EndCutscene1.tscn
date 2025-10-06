@@ -30,6 +30,7 @@ Age: 25 years old
 
 Job: Northern Lights tour guide.
 Fun fact: As a science enthusiast, she learned how to use NASA's API.
-"
+
+THE FORECAST Date: 10/10/2024, 13:00. Location: Iceland.Kristín analyzes NASA data and sees the Kp forecast (9) and the Bz turning south. 'This will be a show,' she whispers."
 image_path = "res://images/book/cena_8.png"
 next = "res://scenes/cutscene/end-cutscene/EndCutscene2.tscn"

@@ -16,10 +16,15 @@ script = ExtResource("1_kd4gf")
 layout_mode = 1
 page_text = "Name: Joseph
 
-Localization: Arkansas, USA
+
+Location: Arkansas, USA
+
 
 Age: 48 years old
 
-Curiosity: Ex engenheiro de comunicação de satélites e hoje é um fazendereio de uma produção de milho"
+
+Fun Fact: A former satellite communications engineer, he is now a corn farmer.
+
+Push Notification 09/10 02:12 : Space weather alert. Cause: 1x CME (Coronal Mass Ejection). GPS risk detected."
 image_path = "res://images/book/cena_4.png"
 next = "res://scenes/cutscene/farmer-cutscene/farmerCutscene2.tscn"

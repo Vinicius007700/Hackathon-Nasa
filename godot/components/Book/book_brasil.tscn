@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdgs64kqwboxn"]
+[gd_scene load_steps=13 format=3 uid="uid://cdgs64kqwboxn"]
 
 [ext_resource type="Script" uid="uid://t5jbimre8hox" path="res://scripts/Book-component/book.gd" id="1_ce51h"]
 [ext_resource type="Texture2D" uid="uid://crwivkdutveq0" path="res://images/book/cena_1.png" id="2_c4e1d"]
+[ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_c4e1d"]
 [ext_resource type="FontFile" uid="uid://bvq8edsvgdcoe" path="res://fonts/Handwriting-Regular.otf" id="3_pdvic"]
 [ext_resource type="AudioStream" uid="uid://dg0lwioayalea" path="res://musics/BookFlip11.wav" id="4_t7qp1"]
 
@@ -116,7 +117,7 @@ offset_right = 278.0
 offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_pdvic")
+theme_override_fonts/normal_font = ExtResource("3_c4e1d")
 theme_override_font_sizes/normal_font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ph5nd")
 text = "asfsgsgasdbasdgaavdbag"

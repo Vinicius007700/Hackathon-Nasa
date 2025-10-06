@@ -30,4 +30,3 @@ func load_cutscene(path: String):
 func _ready():
 	var cutscene_path = "res://scenes/cutscene/farmer-cutscene/farmer.json"
 	var cutscene_data = load_cutscene(cutscene_path)
-	print("Texto final salvo no JSON:", cutscene_data["pages"][0])

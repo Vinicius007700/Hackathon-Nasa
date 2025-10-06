@@ -33,6 +33,7 @@ Age: 54 years old
 Job: Lobster fisherman
 
 Fun fact: Local fishermen typically use a Furuno GP-32 GPS to fish.
-"
+
+DANGER AT SEA Date: 10/10/2024, 15:00. Location: Open sea.Far from the coast, Raimundo's GPS shuts down. He is lost. Alice appears. 'You got caught by a geomagnetic storm!' she says. 'The magnetic shield was hit (MPC), triggering the Geomagnetic Storm (GST) with a peak Kp of 8.67. Your GPS will not return anytime soon."
 image_path = "res://images/book/cena_6.png"
 next = "res://scenes/cutscene/fisher-cutscene/FisherCutscene2.tscn"
