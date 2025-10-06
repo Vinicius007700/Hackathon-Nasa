@@ -24,5 +24,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ojj6x")
 
 [node name="Book-Black" parent="Panel" instance=ExtResource("1_ojj6x")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/end-cutscene/endCutscene2.json"
+page_text = "Alice arrives and meets Krístin, an aurora specialist, to analyze NASA data.
+
+Krístin: \"It took you long enough to get here. I've known since last week that you were coming!\"
+Hearing that voice, Alice is surprised and speechless, but Krístin quickly explains that she predicted it using data from DONKI, a NASA API that provides various data related to Space Weather, like Coronal Mass Ejection and Kp-index. These are all phenomena that impact people's lives, as Alice realized during her journey. Krístin adds that by combining this data, the implications are not always harmful—a beautiful example being the aurora borealis.
+Krístin:  \"If you hurry, you can still see an aurora.
+Alice is amazed, because she had never seen one, and says to Luma, \"Let's go, quickly!
+"
+image_path = "res://images/book/cena_9.png"
 next = "res://scenes/cutscene/end-cutscene/EndCutscene3.tscn"

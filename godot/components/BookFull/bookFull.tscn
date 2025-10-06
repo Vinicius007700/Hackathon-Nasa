@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://wwwlfihaa1p4"]
+[gd_scene load_steps=13 format=3 uid="uid://wwwlfihaa1p4"]
 
 [ext_resource type="Script" uid="uid://t5jbimre8hox" path="res://scripts/Book-component/book.gd" id="1_pblwu"]
 [ext_resource type="Texture2D" uid="uid://dut5kgbc7eppw" path="res://images/book/cena_4.png" id="2_3efij"]
 [ext_resource type="FontFile" uid="uid://cwn34f5aeghxs" path="res://fonts/PressStart2P-Regular.ttf" id="3_yur4e"]
 [ext_resource type="AudioStream" uid="uid://dg0lwioayalea" path="res://musics/BookFlip11.wav" id="4_bdrdo"]
+[ext_resource type="FontFile" uid="uid://bvq8edsvgdcoe" path="res://fonts/Handwriting-Regular.otf" id="4_t688u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udo5r"]
 bg_color = Color(0, 0, 0, 0)
@@ -128,7 +129,9 @@ offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-text = "Next Button"
+theme_override_fonts/font = ExtResource("4_t688u")
+theme_override_font_sizes/font_size = 32
+text = "Next Page"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

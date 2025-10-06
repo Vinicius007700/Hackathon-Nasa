@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqrdnxnwccbpv"]
 
-[ext_resource type="PackedScene" path="res://components/BookFull/bookFull-text-top.tscn" id="1_xitbk"]
+[ext_resource type="PackedScene" uid="uid://cjayovjieqmgf" path="res://components/BookFull/bookFull-text-top.tscn" id="1_xitbk"]
 [ext_resource type="AudioStream" uid="uid://d1offppax47u4" path="res://musics/aurora.ogg" id="2_jy63q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jy63q"]
@@ -25,7 +25,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jy63q")
 
 [node name="Book" parent="Panel" instance=ExtResource("1_xitbk")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/end-cutscene/endCutscene3.json"
+page_text = "As she looks toward the Aurora, Alice says to Luma: \"The day was so long, but I think I've discovered my place in the world. It's not about being an astronaut, or a girl who will save humanity, but rather a person who will impact someone's life, even if only for a single second. Because the 'Threads of Light' are always coming and going in our lives."
+image_path = "res://images/book/cena_10.png"
+next = "res://scenes/main_menu.tscn"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_jy63q")

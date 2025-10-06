@@ -28,12 +28,12 @@ func _on_api_request_completed(result, response_code, headers, body):
 
 	# 2. Converter o corpo da resposta para String
 	var body_string: String = body.get_string_from_utf8()
-	print("Corpo da resposta recebido: ", body_string) # Ótimo para debug
+	#print("Corpo da resposta recebido: ", body_string) # Ótimo para debug
 
 	# 3. Parse do JSON (O PONTO CRÍTICO CORRIGIDO)
 	var json = JSON.new()
 	var error = json.parse(body_string)
-	
+		
 	# Checagem de erro do parse
 	if error != OK:
 		print("Erro ao parsear JSON: ", json.get_error_message(), " na linha ", json.get_error_line())
@@ -54,33 +54,7 @@ func _on_api_request_completed(result, response_code, headers, body):
 		return
 		
 	# Montar o dicionário para o GameState
-	var all_scenes_data: Dictionary = {
-		"farmer": {
-			"image": "res://images/book/cena_4.png",
-			"pages": [
-				"Name: Joseph\nLocalization: Arkansas, USA\nAge: 48\nCuriosity: Ex engenheiro de comunicação de satélites\n%s" % storylines["fazendeiro_ato_1_aviso"],
-				storylines["fazendeiro_ato_2_impacto"],
-				storylines["fazendeiro_ato_3_explicacao"]
-			]
-		},
-		"pescador": {
-			"image": "res://images/book/cena_5.png",
-			"pages": [
-				storylines["pescador_cena_1_calmaria"],
-				storylines["pescador_cena_2_perigo"]
-			]
-		},
-		"guia_aurora": {
-			"image": "res://images/book/cena_6.png",
-			"pages": [
-				storylines["guia_aurora_cena_1_previsao"],
-				storylines["guia_aurora_cena_2_chegada"],
-				storylines["guia_aurora_cena_3_espetaculo"]
-			]
-		}
-	}
-
-	GameState.current_story_data = all_scenes_data
+	GameState.current_story_data = api_data["storylines"]
 	print("GameState populado com sucesso! Redirecionando...")
 	redirect()
 

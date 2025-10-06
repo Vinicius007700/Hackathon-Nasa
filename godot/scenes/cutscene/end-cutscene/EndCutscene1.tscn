@@ -24,5 +24,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_g5ner")
 
 [node name="Book" parent="Panel" instance=ExtResource("1_6x5f8")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/end-cutscene/endCutscene1.json"
+page_text = "Name: Kristín Jónsdóttir
+
+Age: 25 years old
+
+Job: Northern Lights tour guide.
+Fun fact: As a science enthusiast, she learned how to use NASA's API.
+"
+image_path = "res://images/book/cena_8.png"
 next = "res://scenes/cutscene/end-cutscene/EndCutscene2.tscn"

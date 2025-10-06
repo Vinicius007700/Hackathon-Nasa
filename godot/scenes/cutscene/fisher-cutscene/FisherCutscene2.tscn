@@ -24,5 +24,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7medb")
 
 [node name="Book" parent="Panel" instance=ExtResource("1_t5jom")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/fisher-cutscene/fisher2.json"
+page_text = "One day, Raimundo went fishing, just as he always did. He was excited for another day of work when Alice appeared before him. Like a good Brazilian, he offered a gigantic smile, so intense that it surpassed the heat Alice had felt near the Sun. He then asked Alice if she wanted to join him on his boat trip.
+Upon getting on the boat, Alice began to explain what was happening that day. The high Kp-indices were affecting the functionality of sensors, like the GPS.
+When, suddenly, Raimundo's Furuno GP-32 GPS stopped working... Alice, being a kind and generous girl, offered to help Raimundo."
+image_path = "res://images/book/cena_7.png"
 next = "res://scenes/games/boat-game/Main.tscn"

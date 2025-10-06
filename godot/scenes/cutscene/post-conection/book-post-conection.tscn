@@ -12,5 +12,9 @@ grow_vertical = 2
 
 [node name="BookFull" parent="." instance=ExtResource("1_6y162")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/post-conection/book-post-conection.json"
+page_text = "So, Alice closed her eyes and took a deep breath. All she felt was the scorching heat of the Sun, and then everything became calm. She held out a finger, pointing it toward a ray of sunlight.
+And she felt thousands of years, thousands of lives—everything the Sun had felt in a single, brief instant.
+Now, help Alice connect with the sunbeam. In the minigame on the next screen, you will have to hit the disc of light around the Sun so that Alice can become one with it.
+"
+image_path = "res://images/book/cena_3.png"
 next = "res://scenes/level_menu.tscn"

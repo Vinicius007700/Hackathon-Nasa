@@ -24,5 +24,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_117k7")
 
 [node name="Book-Black" parent="Panel" instance=ExtResource("1_jvejy")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/fisher-cutscene/fisher1.json"
+page_text = "Name: Raimundo
+
+Location: Icapuí, Brazil
+
+Age: 54 years old
+
+Job: Lobster fisherman
+
+Fun fact: Local fishermen typically use a Furuno GP-32 GPS to fish.
+"
+image_path = "res://images/book/cena_6.png"
 next = "res://scenes/cutscene/fisher-cutscene/FisherCutscene2.tscn"

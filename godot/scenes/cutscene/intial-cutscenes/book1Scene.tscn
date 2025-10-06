@@ -25,5 +25,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2xamn")
 [node name="Book" parent="Panel" instance=ExtResource("1_pkbjw")]
 layout_mode = 1
 anchors_preset = -1
-data_path = "res://scenes/cutscene/intial-cutscenes/book1.json"
+page_text = "Hi, everyone! 
+ I'm Alice, and I bet you're wondering why a 12-year-old is in the middle of space, being seen by the whole world. First of all, I was chosen to join a space mission called 'Threads of Light' for a unique reason: I have a superpower, but I'd rather show you than talk about it.
+Our objective is to discover more about space weather, a topic that's largely unknown to the public.
+Here's a brief explanation: Space weather is caused by the dynamic conditions of the near-Earth space environment, mainly by the Sun's activity.Now, let's change our point of view."
+image_path = "res://images/book/cena_1.png"
 next = "res://scenes/cutscene/intial-cutscenes/book2Scene.tscn"
