@@ -24,5 +24,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5sp0y")
 
 [node name="Book" parent="Panel" instance=ExtResource("1_5sp0y")]
 layout_mode = 1
-data_path = "res://scenes/cutscene/intial-cutscenes/book2.json"
+page_text = "And look how close we are to the Sun. My power works like this: the closer I get to an object, the more I can learn about it. So, we are the humans who have gotten closest to the Sun. That's a huge honor. I'm so happy.And being so close to the sun, I've realized that even though we see it every day, it's not a constant. Every day, it undergoes explosions and it changes. So, the Sun is something wonderf-*Estrela interrupts:* 'Alice, we've just received an alert from DONKI! A large CME has left the Sun and is on its way to Earth! The 'Threads of Light' mission begins now!'"
+image_path = "res://images/book/cena_2.png"
 next = "res://scenes/games/intro-game/ConexaoSolar.tscn"
